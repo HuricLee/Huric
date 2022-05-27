@@ -245,7 +245,9 @@ hr {
         .about coding cs {
             color: cadetblue;
         }
-       
+        .about coding variable {
+            color: blue;
+        }
         .about coding function {
             color: darkgoldenrod;
         }

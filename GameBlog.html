@@ -1063,10 +1063,10 @@
                                                     Below is the logic of the AI agent of the craling rorbot, which was similarly implemented on the flyers.
                                                 </p>
                                             </coding>
-<pre>
-public <function>   CrawlStatesEnum characterState</function>
+                                            <pre>
+public<function>   CrawlStatesEnum characterState</function>
     {
-    <annotation> //Return the state of the private enum on a get request</annotation>
+<annotation>    //Return the state of the private enum on a get request</annotation>
 <variable>      get</variable>{ return m_characterState; }
 <variable>      set</variable>
         {
@@ -1087,6 +1087,40 @@ public <function>   CrawlStatesEnum characterState</function>
         }
     }
 </pre>
+                                            <coding>
+
+                                                The <variable>get set</variable> accessor or modifier mostly used for storing and retrieving the value from the private field.
+
+                                                Through my practice, I got to know about
+                                                <i>
+                                                    <a href="https://www.completecsharptutorial.com/basic/get-set-method.php#:~:text=How%20to%20use%20get%20set%20modifier%20in%20C%23,used%20for%20storing%20the%20value%20in%20private%20variables.">
+                                                        Get Set Modifier in C#
+
+                                                    </a>
+                                                </i>
+                                                which is really useful. I think I can put this method into use in my future work.
+                                                <br>
+                                                <br>
+                                                Back to the implementation of the AI agent, it is oringinal for me to find it made by the <function>IEnumerator</function>.
+                                                I think I can use this method to make the controller for my protagonist in my future games.Plus, some other functions should be approached in this way.
+                                            </coding>
+                                            <br />
+                                            <coding>
+                                                Then the agent of the flyers is similar, they all need a destination to load.I predecided some positions where the flyers loaded,
+                                                which I think could be opimized by controlling the paths of flying by energy or time. In this way, I can enable the flyers to move everywhere randomly in the scene.
+                                                But this requires a more intelligent agency. Due to the limitated time I didnt try to realize it.
+                                                <br>
+                                                <br>
+                                                What's more, it is the fog that is also a new thing I havent utilized interms of making it dynamics in the game.
+                                               
+                                                As shown in the screenshot below, it is by setting fogDemsity to simply control this. Actually, we can get access to these funtions easily by searching for the attributes online and checking the API.
+                                                Before I didnt make good use of the user API, but as I learnt much knowledge on this field, I could look through the API in a useful way.
+                                            </coding>
+                                            <div class="about">
+                                                <img style="height: 80%; width: 80%;" src="img/gamedesign/fogcontrol.png">
+                                            </div>
+                                            <br>
+
                                         </div>
                                     </div>
                                 </div>
@@ -1110,11 +1144,37 @@ public <function>   CrawlStatesEnum characterState</function>
                             <div class="accordion-inner">
                                 <br />
                                 <p>
-                                    In order to facilitate the progress of the game, I added cutscenes to guide the player, mainly when they meet the nurse robot. In fact, taking such a shot animation is the best way to show the plot. Because if you let the player walk up to the NPC and choose whether or not to talk to the NPC, that's a little too much freedom.
+                                    Halfway through the game, the room releases flying robots which run out their limited energy and
+                                    die in separate positions. The player can collect them thus supplying the energy.
+                                    It is possible to look at reward systems either as a way to motivate players or as a way to soften
+                                    the blow of disappointing outcomes
+                                    <i>
+                                        <a href="http://gamelearninglab.nctu.edu.tw/ctsun/10.1.1.221.4931.pdf">
+                                            (Wang &Sun, 2011)
+                                        </a>
+                                    </i>
+                                    . Although the energy decreases constantly by time,
+                                    the player can continuously look for these flyers as rewards.
+                                    In this case, it is important for the player to make plans of choosing appropriate time to “digest” a flyer.
                                 </p>
-                                <img style="text-align: center ;height:auto; max-width: 80%;" src="img/gamedesign/cutscene.gif">
+
+                                <p>
+                                    Yet, I do not name or define the way of collecting a flyer to add energy, whether by “killing”,
+                                    “extracting” or “collecting”. It's possible that meaningfulness and pleasure in entertainment
+                                    media exist on orthogonal scales. Hence, even if they could coexist, this connection and the intensity
+                                    levels that correlate to each of them might be different 
+                                    <i>
+                                        <a href="https://psycnet.apa.org/record/2016-19756-006">
+                                            (Bartsch & Oliver, 2017)
+                                        </a>
+                                    </i>
+                                    . This is an undefined mechanic for the player to decide morally and emotionally,
+                                    which avoid subjective meaningfulness that probably affects the game process.
+
+                                </p>
+                                <img style="text-align: center ;height:auto; max-width: 80%;" src="img/gamedesign/getflyer.png">
                                 <br /><br /> <p style="text-align:center;font-size:20px">
-                                    Figure 1: the cutscene when Iron encounters the damaged nursing robot
+                                    Figure 1: the flyer runs out energy and can be collected to supply energy
                                 </p>
                                 <br>
                             </div>
@@ -1136,9 +1196,16 @@ public <function>   CrawlStatesEnum characterState</function>
                             <div class="accordion-inner">
                                 <br />
                                 <p>
-                                    In order to facilitate the progress of the game, I added cutscenes to guide the player, mainly when they meet the nurse robot. In fact, taking such a shot animation is the best way to show the plot. Because if you let the player walk up to the NPC and choose whether or not to talk to the NPC, that's a little too much freedom.
+                                    This level has unique mechanism, which Iron uses to run the surgical lights. 
+                                    As shown in Figure 1, the joystick is located in the lower-right corner, 
+                                    with the light choices located in the upper-middle section, near to the reset button. 
+                                    Emotional and moral importance are entwined in the act of repairing and rescuing another robot. 
+                                    What's more, I reckon that as a result of the game's unique light rotation concept, the player has a good time.
+
+                                    Iron may be found in a room that is separate from where the console is located, implying that the Iron is a doctor who is in charge of the devices. 
+                                    Eudaimonic experience is generated by the appearance of personified behaviours in Iron, which indicate his character development.
                                 </p>
-                                <img style="text-align: center ;height:auto; max-width: 80%;" src="img/gamedesign/cutscene.gif">
+                                <img style="text-align: center ;height:auto; max-width: 80%;" src="img/gamedesign/surgery.gif">
                                 <br /><br /> <p style="text-align:center;font-size:20px">
                                     Figure 1: the cutscene when Iron encounters the damaged nursing robot
                                 </p>
