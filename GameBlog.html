@@ -30,6 +30,35 @@
             src: url('StayAwayDemoRegular.ttf') format('truetype');
         }
     </style>
+    <script>
+        window.onload = function () {
+            var effect1 = document.getElementById('wind');
+            var effect2 = document.getElementById('windhall');
+            var effect3 = document.getElementById('surgeryroom');
+
+            effect1.pause();
+            effect2.pause();
+            effect3.pause();
+        }
+        function play(string) {
+            var effect = document.getElementById(string);
+            if (effect.paused) {
+
+                var effect1 = document.getElementById('wind');
+                var effect2 = document.getElementById('windhall');
+                var effect3 = document.getElementById('surgeryroom');
+
+                effect1.pause();
+                effect2.pause();
+                effect3.pause();
+
+                effect.play();
+            } else {
+                effect.pause();
+                effect.currentTime = 0;
+            }
+        }
+    </script>
     <!-- ========== MAIN MENU ========== -->
     <div class="container">
         <ul id="gn-menu" class="gn-menu-main">
@@ -595,7 +624,7 @@
         image.DOfade(endvalue,time);
     }   
 </pre>
-                                            </a>
+                                         
                                     </div>
                                 </div>
                             </div>
@@ -976,24 +1005,45 @@
 
                                 <img style="text-align: center ;height:auto; max-width: 80%;" src="img/gamedesign/cutscene.gif">
                                 <br /><br /> <p style="text-align:center;font-size:20px">
-                                    Figure 1: the cutscene when Iron encounters the damaged nursing robot
+                                    Figure 1: zimbie robots crawling towards Iron
                                 </p>
                                 <img style="text-align: center ;height:auto; max-width: 80%;" src="img/gamedesign/cutscene.gif">
                                 <br /><br /> <p style="text-align:center;font-size:20px">
-                                    Figure 1: the cutscene when Iron encounters the damaged nursing robot
+                                    Figure 2: a black fog emerges
                                 </p>
                                 <img style="text-align: center ;height:auto; max-width: 80%;" src="img/gamedesign/cutscene.gif">
                                 <br /><br /> <p style="text-align:center;font-size:20px">
-                                    Figure 1: the cutscene when Iron encounters the damaged nursing robot
+                                    Figure 3: a swarm of flyers come forth
                                 </p>
-                                <img style="text-align: center ;height:auto; max-width: 80%;" src="img/gamedesign/cutscene.gif">
-                                <br /><br /> <p style="text-align:center;font-size:20px">
-                                    Figure 1: the cutscene when Iron encounters the damaged nursing robot
+                                <img style="text-align: center ;height:auto; max-width: 80%;" src="img/gamedesign/differentscenes.png">
+
+
+                                <br />  <br />
+                                <div class="buttons">
+
+                                    <audio id="wind" src="music/wind.mp3" loop autoplay></audio>
+                                    <button onclick="play('wind')" alt="user" style="color: black; margin-right: 20%;margin-left:1% ">
+                                        Corridor
+                                    </button>
+
+                                    <audio id="surgeryroom" src="music/surgicalroom.mp3" loop autoplay></audio>
+                                    <button onclick="play('surgeryroom')" alt="user" style="color: black;  margin-right: 20% ">
+                                        Surgical Room
+                                    </button>
+
+
+                                    <audio id="windhall" src="music/wind_hall.mp3" loop autoplay></audio>
+                                    <button onclick="play('windhall')" alt="user" style="color: black; margin-left: 1%; margin-right: 2% ">
+                                        Hall
+                                    </button>
+
+                                </div>
+                                <br /> <p style="text-align:center;font-size:20px">
+                                    Figure 4: the cutscene when Iron encounters the damaged nursing robot
                                 </p>
-                                <br>
                             </div>
-                            <!-- /accordion-inner -->
-                        </div>
+                                <!-- /accordion-inner -->
+                            </div>
                         <!-- /collapse -->
                     </div>
                     <br />
