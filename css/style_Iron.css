@@ -35,7 +35,7 @@ p {
 }
 
 a {
-    font-family: 'Times New Roman';
+    font-family: Raleway;
     color: #ff7d48;
     word-wrap: break-word;
     -webkit-transition: color .1s ease-in, background .1s ease-in;
@@ -78,7 +78,7 @@ hr {
 }
 
 #headerwrap {
-    background: url(../img/Iron-bg.gif) no-repeat center top;
+    background: url(../img/Iron-bg.jpg) no-repeat center top;
     margin-top: -10px;
     padding-top: 120px;
     text-align: center;
@@ -99,10 +99,10 @@ hr {
 
     #headerwrap h1 {
         transform: scale(1.2,1);
-        font-family: myfont;
+        font-family: Raleway;
         font-weight: 500;
         font-size: 120px;
-        letter-spacing:10px;
+        letter-spacing: 10px;
         color: #ffffff
     }
     #headerwrap h2 {
@@ -228,7 +228,7 @@ hr {
 }
     .about p {
         transform: scale(1,1.05);
-        font-size: 18px;
+        font-size: 20px;
         font-family: 'Times New Roman', Times;
         color: #2f2f2f;
         text-align: justify;
@@ -237,7 +237,7 @@ hr {
     }
     .about coding {
         transform: scale(1,1.05);
-        font-size: 16px;
+        font-size: 20px;
         font-family: 'Times New Roman', Times;
         color: #2f2f2f;
         text-align: left;
@@ -261,7 +261,7 @@ hr {
         border-inline-style: dashed;
         height: auto;
         max-width: 100%;
-        font-size: 16px;
+        font-size: 18px;
         font-family: 'Times New Roman';
         color: #2f2f2f;
         text-align: left;
@@ -403,9 +403,12 @@ hr {
   vertical-align: middle
 }
 .accordion-innerHeading {
+    font-size:20px;
 text-align:left;
 }
-
+.accordion-innerHeading im{
+    text-align: center;
+}
 .accordion-heading date {
   background-color: #2f2f2f;
   color: #fff;
