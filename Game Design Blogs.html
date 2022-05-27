@@ -515,15 +515,15 @@
                                     In this level, I implemented the specific common function of energy.
                                 </p>
                                 <img style="text-align: center ;height:auto; width: 80%;" src="img/gamedesign/pic0227.png">
-                                <p style="text-align:center;font-size:16px">
+                                <br /><br /><p style="text-align:center;font-size:20px">
                                     Figure 1: UI of Energy
                                 </p>
                                 <img style="text-align: center; height: auto; width: 80%;" src="img/gamedesign/pic0227_1.png">
-                                <p style="text-align:center;font-size:16px">
+                                <br /><br /><p style="text-align:center;font-size:20px">
                                     Figure 2: the color changes with the units of energy
                                 </p>
                                 <img style="text-align: center; height: auto; width: 80%;" src="img/FlashEnergyBar.gif">
-                                <p style="text-align:center;font-size:16px">
+                                <br /><br /><p style="text-align:center;font-size:20px">
                                     Figure 3: the bar flashes with little energy
                                 </p>
                                 <div class="accordion-innerHeading">
@@ -541,21 +541,61 @@
                                             <br />
                                         </coding>
 <pre>
-                                        <function>IEnumerator CountDownBloodLosing()</function>
+<function>  IEnumerator CountDownBloodLosing()</function>
     {
         while(true)
         {
              yield return new WaitForSeconds(m_LosingTime);
-                                        <function>LoseEnergy();</function>
+<function>          LoseEnergy();</function>
         }
     }
 </pre>
                                         <br>
 
                                         <coding>
-                                            As imgage
+                                            As Figure 1 shown, On the energy display,
+                                            I made it by instantiating twenty units of energy,
+                                            which is a very basic implementation method that I'll go over here.
+                                            On the UI, the energy color changes depending on the amount of energy,
+                                            and a flash alerts the player when energy is too little.
+                                            <div class="about">
+                                                <img style="height: 50%; width: 40%;" src="img/gamedesign/colorfadecs.png">
+                                            </div>
+                                            <br />
+                                            Bellow is the script, <cs>ColorFade.cs</cs>, which makes ther energy fade-in and fade-out.
+                                            I also used this script in other functions several times.
+                                            Likewise, IEnumerator is used in this script to make this effect.
+                                            <br /><br />
                                         </coding>
-
+<pre>
+<function>  IEnumerator OnFading()</function>
+    {
+        switch m_FadeType
+        while(time&lt;fadetime))
+        {
+            image.color.dofade(fadedcolor)
+        }
+        reset time;
+        while(time&lt;fadetime))
+        {
+            image.color.dofade(normalcolor)
+        }
+    }
+</pre>
+                                        <coding>
+                                            Notes: Using <a href="http://dotween.demigiant.com/">DOTween</a> is easier to make things zoom in and zoom out or fade in and fade out.
+                                            <br />
+                                            The example could be:
+                                            <br /><br />
+<pre>
+    Using DG.Tweening;
+    ...
+    Class Name:
+    {
+        image.DOfade(endvalue,time);
+    }   
+</pre>
+                                            </a>
                                     </div>
                                 </div>
                             </div>
@@ -563,8 +603,322 @@
                         </div>
                         <!-- /collapse -->
                     </div>
-                    <!-- /accordion-group 6-->
                     <br>
+                    <!-- Enable Players to Choose -->
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse11">
+                                <date>Mar 01, 2022</date>
+                                <plus> + </plus> Enable Players to Choose
+                            </a>
+                        </div>
+                        <div id="collapse11" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                <br />
+                                <p>
+                                    The way our mechanics were set up, not only did energy decrease over time,
+                                    but some interactions in the game also caused energy to decrease.
+                                    When I was thinking about how to present this mechanic,
+                                    I realized that some seemingly meaningless mechanics could actually exist in the game,
+                                    such as making the player make choices.
+                                    <br>
+                                    <br>
+                                    <i>
+
+                                        "Inconsequential choices that do not notably affect the game result should be meaningful
+                                        because choices provide a sense  of agency to the player."
+                                        <a href="https://www.researchgate.net/profile/Jose-Zagal/publication/319370603_Meaning_without_consequence_virtue_ethics_and_inconsequential_choices_in_games/links/5a7dcab4a6fdcc1d3e7fd13d/Meaning-without-consequence-virtue-ethics-and-inconsequential-choices-in-games.pdf">
+                                            (Nay & Zagal, 2017).
+                                        </a>
+                                    </i>
+                                    <br />
+                                    <br>
+                                    Such a view is quite unique. For most people, there are choices in games that lead to victory.
+                                    <br>
+                                    <br>
+                                    <i>
+                                        "Winning is a desirable action,  whereas losing may lead to an increase in unpleasant emotional states."
+                                        <a href="https://www.sciencedirect.com/science/article/pii/S0747563219301773?casa_token=PeGgGs4Rg24AAAAA:YFPzs5_9ed3ucvWGivSXdabizfn5FHAmDt9FX-gG47GAGQkzc5z1qTJrtGhUW04ikRsxK45WQA">
+                                            (Dowsett & Jackson, 2019).
+                                        </a>
+                                    </i>
+                                    <br>
+                                    <br>
+                                    However, when we re-consider the meaning of the game, we find that many things that have nothing to do with winning,
+                                    such as the Easter eggs, hidden details, etc., are often the fun part of the player's experience.
+                                    And just as it's more dignified to write about it in a euphemistic way,
+                                    games that improve the plot with hard-to-find details, or challenge the mood of the player,
+                                    make for a great experience.
+                                </p>
+                            </div>
+                            <!-- /accordion-inner -->
+                        </div>
+                        <!-- /collapse -->
+                    </div>
+                    <br>
+                    <!-- Eudaimonic Game Experiences -->
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse12">
+                                <date>Mar 03, 2022</date>
+                                <plus> + </plus> Eudaimonic Game Experiences
+                            </a>
+                        </div>
+                        <div id="collapse12" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                <br />
+                                <p>
+                                    After reading through a lot of theories,
+                                    I got to understand for the first time the widespread use of the word Eudaimonia in the field of games
+                                    and how it is often used to evaluate a game. Games serve for the player,
+                                    so creating experiences is a must, and there seems to be no limit to the level of experience,
+                                    as if happiness will never peak, and games can continue to create more and more Eudaimonic experiences.
+                                    <br>
+                                    <br>
+                                    Eudaimonia incorporates four broad conceptual patterns
+                                    <i>
+                                        <a href="file:///D:/Desktop/homework/Game%20Design/MaC%209(2)%20-%20The%20'Eudaimonic%20Experience'_%20A%20Scoping%20Review%20of%20the%20Concept%20in%20Digital%20Games%20Research.pdf">
+                                            (Daneels et at., 2021)
+                                        </a>
+                                        :
+                                        <br>(1) appreciation as an overarching (yet imprecise) eudaimonic outcome of playing digital games;
+                                        <br>(2) covariation among meaningful, emotionally moving/challenging, and self-reflective experiences;
+                                        <br> (3) the unique potential of digital games to afford eudaimonic social connectedness; and
+                                        <br> (4) other eudaimonia-related concepts (e.g., nostalgia, well-being, elevation)
+                                    </i>
+
+                                    <br />
+                                    <br>
+                                    What experiences can we create for our players with regard to our games?
+                                    First of all, as a player, I think it's easy for players to empathize with Iron from the first level.
+                                    In order to strengthen this connection, we need to add more elements to support it in the second level.
+                                </p>
+                            </div>
+                            <!-- /accordion-inner -->
+                        </div>
+                        <!-- /collapse -->
+                    </div>
+                    <br>
+                    <!-- Consume Energy By Opening Doorss -->
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse13">
+                                <date>Mar 07, 2022</date>
+                                <plus> + </plus> Consume Energy By Opening Doorss
+                            </a>
+                        </div>
+                        <div id="collapse13" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                <br />
+                                <p>
+                                    According to our mechanics, energy, in addition to decreasing over time, can also be used to participate in interactions within the scene. But as mentioned earlier, we want to give the player choices, and avoid choices that tend to win. And that's actually what I did.
+                                </p>
+
+                                <p>
+                                    Every single room in the scene has a door, and each time the player opens the door, energy is consumed. However, having a room in it actually has no effect on the progress of the game. Such an empty space exists in most games, and it gives the player some space to explore (Figure 2). So, after entering an unhelpful room, the player might think twice before using energy to open the door.
+                                </p>
+                                <p>
+                                    In addition, In the design of opening the door, I also made a mechanism that gradually charged the door and then opened it. In such details, the game's progression system can be solid, with energy-deficient doors slowly opening only after they are fully charged. This is not only a interesting mechanic, but also a way to suppress the desire of some players to finish the game and make them feel more relaxed.
+                                </p>
+                                <img style="text-align: center ;height:auto; width: 80%;" src="img/gamedesign/OpenDoor.gif">
+                                <br /><br /> <p style="text-align:center;font-size:20px">
+                                    Figure 1: uses energy to charge the door and open it
+                                </p>
+                                <img style="text-align: center; height: auto; width: 80%;" src="img/gamedesign/emptyrooms.png">
+                                <br /><br /><p style="text-align:center;font-size:20px">
+                                    Figure 2: empty rooms where the player could only explore
+                                </p>
+
+                                <div class="accordion-innerHeading">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#collapse13" href="#code13">
+                                        <plus> + </plus>Code of Opening Door
+                                    </a>
+                                </div>
+                                <div id="code13" class="accordion-body collapse">
+                                    <div class="accordion-innerHeading">
+                                        <br />
+                                        <coding>
+                                            Using the universal function of interacting, <function>InteractObjects()</function>, It is not difficult to
+                                            realize the open of doors.
+                                            <br />
+                                            The exlusive script, <cs>ActiveDoor.cs</cs> realizes zooming in of opening door.
+                                            <br />
+                                            Before that, we should create a new shader to implement the demonstrated effect (Figure 1).
+                                            <br />
+                                        </coding>
+                                        <div class="about">
+                                            <img style="height: 80%; width: 80%;" src="img/gamedesign/door_effects_shader.png">
+                                            <br /><br /><p style="text-align:center;font-size:20px">
+                                                Figure 3: the shader graph of the door
+                                            </p>
+                                            <img style="height: 80%; width: 80%;" src="img/gamedesign/door_effects_shader_detail.png">
+                                            <br /><br /><p style="text-align:center;font-size:20px">
+                                                Figure 4: the main logic of the shader
+                                            </p>
+                                        </div>
+                                        <p>
+                                            As shown in Figure 3 and4, to implement the effect that the emission fades out from the center,
+                                            I mainly add an offset variable to the x axis of the emission picture.
+                                            The reason for the x axis is based on the appearance of the door that the energy slots are distributed on the top center and the bottom center.
+                                        </p>
+                                        <p>
+                                            After making the shader, there is a vital step that I have never met since it is only a short time for me to learn shaders.
+                                        </p>
+                                        <div class="about">
+                                            <img style="height: 50%; width: 40%;" src="img/gamedesign/activedoorcs.png">
+                                        </div>
+                                        <br />
+                                        <coding>
+                                            Bellow is the functions in <cs>ActiveDoor.cs:</cs>, and the fading effect also used <function>IEnumerator</function>
+                                            <br />
+                                            <br />
+                                        </coding>
+                                        <pre>
+<function>  FillSlots()</function>
+    {
+        ...
+<annotation>        //Very important to enablekeword, which I didnt know and spent a lot time on it.</annotation>
+        m_GlassDoorEmission.EnableKeyword("_EMISSION");
+        m_GlassDoorEmission.SetFloat("_Fill", 0);
+        m_GlassDoorEmission.SetColor("_EnergyColor",Color.black);
+        ...
+    }
+<function>  OpenDoor()</function>
+    {
+        ...
+<annotation>        //Here I using DOTween method which is very useful.</annotation>
+        transform.DOLocalMoveX(moveToPosX, time);
+        ...
+    }
+</pre>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /accordion-inner -->
+                        </div>
+                        <!-- /collapse -->
+                    </div>
+                    <br>
+
+                    <!-- Consume Energy By Opening Doorss -->
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse14">
+                                <date>Mar 14, 2022</date>
+                                <plus> + </plus> Prompting Tips
+                            </a>
+                        </div>
+                        <div id="collapse14" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                <br />
+                                <p>
+                                    There needs to be some freedom in the player's exploration, but at the same time the game should be guided so that the player doesn't lose passively. In order to prevent the player from being confused and unable to play the game smoothly due to wandering around using energy at random, I introduced a quest prompt system.
+                                </p>
+
+                                <p>
+                                    The quest system is something that most games have, especially if they have a story. I designed the mission system in places that required the player to do different things. It is very important for the content design to be vague and prompt, allowing the player to follow certain game logic while having freedom.
+                                </p>
+                                <p>
+                                    The appearance and dynamic effect of the mission system are based on the task prompt effect in Need for Speed 18 (Figure 1), which is displayed in the right middle of the interface in translucent gradient color, which not only prompts the mission, but also is very beautiful.
+                                </p>
+                                <img style="text-align: center ;height:auto; width: 80%;" src="img/gamedesign/missionTipinNeedofSpeed.png">
+                                <br /><br /> <p style="text-align:center;font-size:20px">
+                                    Figure 1: the Interface of Need of Speed 18, with the mission tips on the right side.
+                                </p>
+                                <img style="text-align: center; height: auto; width: 80%;" src="img/gamedesign/missionTip.gif">
+                                <br /><br /><p style="text-align:center;font-size:20px">
+                                    Figure 2: the Animation of the Prompting tips
+                                </p>
+
+                                <div class="accordion-innerHeading">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#collapse14" href="#code14">
+                                        <plus> + </plus>Code of Plot Triggers
+                                    </a>
+                                </div>
+                                <div id="code14" class="accordion-body collapse">
+                                    <div class="accordion-innerHeading">
+                                        <br />
+                                        <coding>
+                                            The code part of the mission system is where the logic is most needed, and failing to put the story together runs the risk of repeating the same mistakes. Therefore, I divided the story into simple classes, and used a unified format to wrap each story point with functions, which is more logical.
+                                            <br />
+                                            <br />
+                                            With the level controller,<cs> SecondLevelController.cs</cs>, I I put all the mechanics together in this code.
+                                            <br />
+                                            As Figure 3 illustrates, I set many triggers called "PlotTrigger" to help me record the current progress.
+                                            <br />
+                                            <br />
+                                        </coding>
+                                        <div class="about">
+                                            <img style="height: 80%; width: 80%;" src="img/gamedesign/plottrigger.png">
+                                            <br /><br /><p style="text-align:center;font-size:20px">
+                                                Figure 3: the Triggers in the Hierarchy
+                                            </p>
+                                        </div>
+                                        <pre>
+<cs>  SecondLevelController.cs</cs>
+    # Character Control
+    # Level Control
+    # Door Control
+    # Cell Control
+    # NursingRobot Control
+    # Environment Control
+</pre>
+                                        <p>
+                                            As shown above, this script comprises almost all the mechanics of this level. Here I want to mainly introduce the logic of Level Control
+                                        </p>
+                                        <pre>
+<function>    PlotTriggerd()</function>
+    {
+        switch Plot
+                1    <function>Plot01()</function><annotation>// enter the hall</annotation>
+                2    <function>Plot02()</function><annotation>// meet the nursing robot</annotation>
+                3    <function>Plot03()</function><annotation>// chat with the nursing robot</annotation>
+                4    <function>Plot04()</function><annotation>// on the path to the room with cells</annotation>
+                5    <function>Plot05()</function><annotation>// enter the room with cells</annotation>
+                6    <function>Plot06()</function><annotation>// found the two parts and then talk with the robot</annotation>
+                7    <function>Plot07()</function><annotation>// go to fix the robot</annotation>
+                8    <function>Plot08()</function><annotation>// successfully fixed the robot</annotation>
+                9    <function>Plot09()</function><annotation>// talk with fixed robot</annotation>
+               10   <function>Plot10()</function><annotation>// collected two parts of the keypad</annotation>
+               11   <function>Plot11()</function><annotation>// collect the energy</annotation>
+    }
+</pre>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /accordion-inner -->
+                        </div>
+                        <!-- /collapse -->
+                    </div>
+                    <br>
+
+                    <!-- Cutscene-->
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse15">
+                                <date>Mar 18, 2022</date>
+                                <plus> + </plus> Cutscene
+                            </a>
+                        </div>
+                        <div id="collapse15" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                <br />
+                                <p>
+                                    In order to facilitate the progress of the game, I added cutscenes to guide the player, mainly when they meet the nurse robot. In fact, taking such a shot animation is the best way to show the plot. Because if you let the player walk up to the NPC and choose whether or not to talk to the NPC, that's a little too much freedom.
+                                </p>
+                                <img style="text-align: center ;height:auto; max-width: 80%;" src="img/gamedesign/cutscene.gif">
+                                <br /><br /> <p style="text-align:center;font-size:20px">
+                                    Figure 1: the cutscene when Iron encounters the damaged nursing robot
+                                </p>
+                                <br>
+                            </div>
+                            <!-- /accordion-inner -->
+                        </div>
+                        <!-- /collapse -->
+                    </div>
+
                 </div>
                 <!-- Accordion -->
             </div>
