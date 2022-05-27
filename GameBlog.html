@@ -1041,9 +1041,59 @@
                                 <br /> <p style="text-align:center;font-size:20px">
                                     Figure 4: the cutscene when Iron encounters the damaged nursing robot
                                 </p>
+                                <div class="code">
+                                    <div class="accordion-innerHeading">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#collapse16" href="#code16">
+                                            <plus> + </plus>Code of Zombie Robots, Flyers and Fog
+                                        </a>
+                                    </div>
+                                    <div id="code16" class="accordion-body collapse">
+                                        <div class="accordion-innerHeading">
+                                            <br />
+                                            <coding>
+                                                <p>
+                                                    I suggested the zombie robots and the logic was mainly implemented by Zhenyu Zhou. But we shared the same logic of implementing the AI of other characters.
+                                                </p>
+                                                <p>
+                                                    Specifically, in the past, I used <function>Update() </function>to use <cs>Nav Mesh Agent</cs>, which was the case in the first level and many other games I made.
+                                                    I learned from the turorials from masterclass.Specifically, it is Term 2 - Week 4 - Animation Controllers and Events - Navmesh AI pathfinding.
+                                                    In this section I learnt a new method of making AI. What's more, I learnt some coding that I didnt use before though I saw this but didnt try to approach.
+                                                </p>
+                                                <p>
+                                                    Below is the logic of the AI agent of the craling rorbot, which was similarly implemented on the flyers.
+                                                </p>
+                                            </coding>
+<pre>
+public <function>   CrawlStatesEnum characterState</function>
+    {
+    <annotation> //Return the state of the private enum on a get request</annotation>
+<variable>      get</variable>{ return m_characterState; }
+<variable>      set</variable>
+        {
+            StopAllCoroutines();
+            m_characterState = value;
+            switch (m_characterState)
+            {
+                case CrawlStatesEnum.IDLE:
+                    StartCoroutine(<function>IdleCoRoutine()</function>);
+                    break;
+                case CrawlStatesEnum.FIND:
+                    StartCoroutine(<function>CrawlCoRoutine()</function>);
+                    break;
+                case CrawlStatesEnum.STOP:
+                    StartCoroutine(<function>StopCoRoutine()</function>);
+                    break;
+            }
+        }
+    }
+</pre>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /code-->
                             </div>
-                                <!-- /accordion-inner -->
-                            </div>
+                            <!-- /accordion-inner -->
+                        </div>
                         <!-- /collapse -->
                     </div>
                     <br />

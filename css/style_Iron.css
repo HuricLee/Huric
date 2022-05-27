@@ -245,7 +245,7 @@ hr {
         .about coding cs {
             color: cadetblue;
         }
-
+       
         .about coding function {
             color: darkgoldenrod;
         }
@@ -270,6 +270,9 @@ hr {
     }
         .about pre cs {
             color: cadetblue;
+        }
+        .about pre variable {
+            color: blue;
         }
         .about pre function {
             color: darkgoldenrod;
