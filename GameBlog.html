@@ -1021,18 +1021,18 @@
                                 <br />  <br />
                                 <div class="buttons">
 
-                                    <audio id="wind" src="music/wind.mp3" loop autoplay></audio>
+                                    <audio id="wind" src="music/wind.mp3" loop></audio>
                                     <button onclick="play('wind')" alt="user" style="color: black; margin-right: 20%;margin-left:1% ">
                                         Corridor
                                     </button>
 
-                                    <audio id="surgeryroom" src="music/surgicalroom.mp3" loop autoplay></audio>
+                                    <audio id="surgeryroom" src="music/surgicalroom.mp3" loop></audio>
                                     <button onclick="play('surgeryroom')" alt="user" style="color: black;  margin-right: 20% ">
                                         Surgical Room
                                     </button>
 
 
-                                    <audio id="windhall" src="music/wind_hall.mp3" loop autoplay></audio>
+                                    <audio id="windhall" src="music/wind_hall.mp3" loop ></audio>
                                     <button onclick="play('windhall')" alt="user" style="color: black; margin-left: 1%; margin-right: 2% ">
                                         Hall
                                     </button>
@@ -1258,11 +1258,34 @@ public<function>   CrawlStatesEnum characterState</function>
                                                     The logic of selecting lamp is a basic mutex selection problem, and writing this logic is useful for many things. My logic is as follows in <cs> SurgeryController.cs</cs>:
                                                 </p>
                                                 <pre>
-<function>  SelectLamp(lamp object)</function>
+<function>  SelectLamp(lampbutton object)</function>
     {
-<annotation>    //each button refers to a lamp</annotation>
-        SurgeryController => <function>SelectLamp(referred lamp)</function>;
-    
+<annotation>    //Firstly, check whether the parameter exists</annotation>
+        if(!lamp) return
+
+<annotation>    //Secondly, determine wthether an object has been selected</annotation>
+        if(m_selectd)
+        {
+<annotation>    //Cancels the selection of the current lampbutton</annotation>
+            m_selected.OnDeSelect();
+         }
+
+<annotation>    //Thirdly, check wthether the selected object euqals the lampbutton parameter </annotation>
+        if(m_selectd==lampbutton)
+        {                
+<annotation>    //If selected is the lampbutton, it is a cancel of the operation</annotation>
+            m_selected.OnDeSelect();
+            m_selected = null;
+<annotation>    //surgicallamp is the lamp referred by the lampbutton</annotation>
+            m_surgicallamp = null;
+
+            return;
+         }
+<annotation>    //If selected is not the lampbutton, it is a switch of the operation</annotation>
+        lampbutton=>(lampclick.OnSelect())
+        m_selected=lampbutton;
+        m_surgicallamp=lampbutton=>(lampclick.m_surgicallamp)
+
      }  
 </pre>
 
