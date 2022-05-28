@@ -624,7 +624,7 @@
         image.DOfade(endvalue,time);
     }   
 </pre>
-                                         
+
                                     </div>
                                 </div>
                             </div>
@@ -1032,14 +1032,14 @@
                                     </button>
 
 
-                                    <audio id="windhall" src="music/wind_hall.mp3" loop ></audio>
+                                    <audio id="windhall" src="music/wind_hall.mp3" loop></audio>
                                     <button onclick="play('windhall')" alt="user" style="color: black; margin-left: 1%; margin-right: 2% ">
                                         Hall
                                     </button>
 
                                 </div>
                                 <br /> <p style="text-align:center;font-size:20px">
-                                    Figure 4: the cutscene when Iron encounters the damaged nursing robot
+                                    Figure 4: the different scenes with different background sounds
                                 </p>
                                 <div class="code">
                                     <div class="accordion-innerHeading">
@@ -1112,7 +1112,7 @@ public<function>   CrawlStatesEnum characterState</function>
                                                 <br>
                                                 <br>
                                                 What's more, it is the fog that is also a new thing I havent utilized interms of making it dynamics in the game.
-                                               
+
                                                 As shown in the screenshot below, it is by setting fogDemsity to simply control this. Actually, we can get access to these funtions easily by searching for the attributes online and checking the API.
                                                 Before I didnt make good use of the user API, but as I learnt much knowledge on this field, I could look through the API in a useful way.
                                             </coding>
@@ -1162,7 +1162,7 @@ public<function>   CrawlStatesEnum characterState</function>
                                     Yet, I do not name or define the way of collecting a flyer to add energy, whether by “killing”,
                                     “extracting” or “collecting”. It's possible that meaningfulness and pleasure in entertainment
                                     media exist on orthogonal scales. Hence, even if they could coexist, this connection and the intensity
-                                    levels that correlate to each of them might be different 
+                                    levels that correlate to each of them might be different
                                     <i>
                                         <a href="https://psycnet.apa.org/record/2016-19756-006">
                                             (Bartsch & Oliver, 2017)
@@ -1231,8 +1231,14 @@ public<function>   CrawlStatesEnum characterState</function>
                                                     lamp will stop, and the part can be installed into the robot successfully.
 
                                                 </p>
+                                                <div class="about">
+                                                    <img style="text-align: center ;height:auto; max-width: 80%;" src="img/gamedesign/selectlamp.gif">
+                                                    <br /><br /> <p style="text-align:center;font-size:20px">
+                                                        Figure 2: the demonstration of selecting lamps
+                                                    </p>
+                                                </div>
                                                 <p>
-                                                    <cs> LampClick.cs</cs> controls the click event.I used IPointer Handler to implement the event myself because I want to make the button selected untile the player deselect it or finish one treatment.
+                                                    As demonstrated in Figure 2, this is the final outcome of selecting. <cs> LampClick.cs</cs> controls the click event.I used IPointer Handler to implement the event myself because I want to make the button selected untile the player deselect it or finish one treatment.
                                                 </p>
                                                 <pre>
 <annotation>    //function of buttons on UI which are connected to the <cs>SurgeryController.cs</cs></annotation>
@@ -1288,68 +1294,69 @@ public<function>   CrawlStatesEnum characterState</function>
 
      }  
 </pre>
-
+                                                <div class="about">
+                                                    <img style="text-align: center ;height:auto; max-width: 80%;" src="img/gamedesign/toggle.gif">
+                                                    <br /><br /> <p style="text-align:center;font-size:20px">
+                                                        Figure 3: the demonstration of selecting lamps
+                                                    </p>
+                                                </div>
                                                 <p>
-                                                    To make the handle toggle move within the direction bar, I use <cs> LampController.cs</cs> to
-
+                                                    As demonstrated in Figure 3, this is the final outcome of clamping toggle within certain range and seperating X and Y axis.
+                                                    To make the handle toggle move within the direction bar, I use <cs> LampController.cs</cs> to clamp the amount of movement.
+                                                </p>
+                                                <p>
+                                                    I used IDragHandler to implement the function.
                                                 </p>
                                             </coding>
                                             <pre>
-public<function>   CrawlStatesEnum characterState</function>
+<function>   OnBeginDrag(PointerEventData eventData)</function>
     {
-<annotation>    //Return the state of the private enum on a get request</annotation>
-<variable>      get</variable>{ return m_characterState; }
-<variable>      set</variable>
-        {
-            StopAllCoroutines();
-            m_characterState = value;
-            switch (m_characterState)
+<annotation>        //Firstly, when the drag begins, record the oringinal offset between mouse and the toggle.</annotation>
+<annotation>        //It is very important that we need to convert the position of the mouse between world and screen.</annotation>
+<annotation>        //eep z axis the same.</annotation>
+        z = Camera.WorldToScreenPoint(transform.position).z;
+        orinMousPos = new Vector3(mousePos.x, mousePos.y, z);
+        offset = transform.position - Camera.ScreenToWorldPoint(orinMousPos);
+    }
+
+<function>   OnDrag(PointerEventData eventData)</function>
+    {
+<annotation>        //Before dragging, the first step is to decide the direction</annotation>
+<annotation>        //Record the first movement of mouse and get a normalized vector thereby the direction</annotation>
+            ...
+            dragMousPos = new Vector3(mousePos.x, mousePos.y, z);
+            if (dragMousPos != orinMousPos)
             {
-                case CrawlStatesEnum.IDLE:
-                    StartCoroutine(<function>IdleCoRoutine()</function>);
-                    break;
-                case CrawlStatesEnum.FIND:
-                    StartCoroutine(<function>CrawlCoRoutine()</function>);
-                    break;
-                case CrawlStatesEnum.STOP:
-                    StartCoroutine(<function>StopCoRoutine()</function>);
-                    break;
+                Vector2 dir = (dragMousPos - orinMousPos).normalized;
+                if (Mathf.Abs(dir.x) < Mathf.Abs(dir.y))
+                    dragDir = vertical;
             }
-        }
+            ...
+<annotation>        //Then, we only need to add the current movement with offset in order to move the toggle</annotation>
+            ...
+<annotation>        //Take vertical direction as an example</annotation>
+            dragDir->vertical
+            dragMousPos = new Vector3(x, Input.mousePosition.y, z);
+            dragMousPos=uiCamera.ScreenToWorldPoint(dragMousPos) + offset;
+            ...
+<annotation>        //Finally, we can use the movement to control the lamps' rotation</annotation>
+            SurgeryController.<function>DriveSurgicalLamp(0,y offset of Recttransform)</function>;
     }
 </pre>
-                                            <coding>
-
-                                                The <variable>get set</variable> accessor or modifier mostly used for storing and retrieving the value from the private field.
-
-                                                Through my practice, I got to know about
-                                                <i>
-                                                    <a href="https://www.completecsharptutorial.com/basic/get-set-method.php#:~:text=How%20to%20use%20get%20set%20modifier%20in%20C%23,used%20for%20storing%20the%20value%20in%20private%20variables.">
-                                                        Get Set Modifier in C#
-
-                                                    </a>
-                                                </i>
-                                                which is really useful. I think I can put this method into use in my future work.
-                                                <br>
-                                                <br>
-                                                Back to the implementation of the AI agent, it is oringinal for me to find it made by the <function>IEnumerator</function>.
-                                                I think I can use this method to make the controller for my protagonist in my future games.Plus, some other functions should be approached in this way.
-                                            </coding>
-                                            <br />
-                                            <coding>
-                                                Then the agent of the flyers is similar, they all need a destination to load.I predecided some positions where the flyers loaded,
-                                                which I think could be opimized by controlling the paths of flying by energy or time. In this way, I can enable the flyers to move everywhere randomly in the scene.
-                                                But this requires a more intelligent agency. Due to the limitated time I didnt try to realize it.
-                                                <br>
-                                                <br>
-                                                What's more, it is the fog that is also a new thing I havent utilized interms of making it dynamics in the game.
-
-                                                As shown in the screenshot below, it is by setting fogDemsity to simply control this. Actually, we can get access to these funtions easily by searching for the attributes online and checking the API.
-                                                Before I didnt make good use of the user API, but as I learnt much knowledge on this field, I could look through the API in a useful way.
-                                            </coding>
-                                            <div class="about">
-                                                <img style="height: 80%; width: 80%;" src="img/gamedesign/fogcontrol.png">
-                                            </div>
+                                            <p>
+                                                Come back to <cs>SurgeryController.cs</cs>
+                                            </p>
+                                            <pre>
+<function>DriveSurgicalLamp(x, y)</function>
+{
+<annotation>        //driveAmount is used as EulerAngles</annotation>
+    driveAmount=new Vector3(-y,0,x);
+}
+<function>Update()</function>
+{
+    m_surgeryLamp.transform.Rotate(driveAmount*rotSpeed);
+}
+</pre>
                                             <br>
 
                                         </div>
@@ -1375,11 +1382,31 @@ public<function>   CrawlStatesEnum characterState</function>
                             <div class="accordion-inner">
                                 <br />
                                 <p>
-                                    In order to facilitate the progress of the game, I added cutscenes to guide the player, mainly when they meet the nurse robot. In fact, taking such a shot animation is the best way to show the plot. Because if you let the player walk up to the NPC and choose whether or not to talk to the NPC, that's a little too much freedom.
+                                    In order to enhance the fun and interactivity of the game, I added some scene interactions in the subsequent production, such as benches that can be kicked away, cabinets that can be opened, and glass doors that can be broken. Many of these things do not affect the progress of the game, but they add to the atmosphere of the game, such as kicked over benches and disorderly visits, glass shards scattered on the ground and so on, which can heighten the sense of the hospital's waste.
                                 </p>
-                                <img style="text-align: center ;height:auto; max-width: 80%;" src="img/gamedesign/cutscene.gif">
+                                <p>
+                                    To implement these mechanics,I added Rigidbody component to the chairs and it can be moved;About the cabinet,
+                                    I didnt normally make an animation for opening the door. I rather used
+                                    <a href="https://assetstore.unity.com/packages/tools/animation/dotween-hotween-v2-27676">DOTween</a>
+                                    to implemented this by transform.DORotateY();About the split of the glasses, I used the
+                                    <a href="https://assetstore.unity.com/packages/tools/physics/shatter-toolkit-1017">
+                                        Shatter Toolkit
+                                    </a>. And I add some specific sentences to change the material.
+
+                                </p>
+                                <img style="text-align: center ;height:auto; max-width: 80%;" src="img/gamedesign/kickoffchairs.gif">
                                 <br /><br /> <p style="text-align:center;font-size:20px">
-                                    Figure 1: the cutscene when Iron encounters the damaged nursing robot
+                                    Figure 1: kick off the chairs
+                                </p>
+                                <br>
+                                <img style="text-align: center ;height:auto; max-width: 80%;" src="img/gamedesign/opencabinet.gif">
+                                <br /><br /> <p style="text-align:center;font-size:20px">
+                                    Figure 2: open the cabinet
+                                </p>
+                                <br>
+                                <img style="text-align: center ;height:auto; max-width: 80%;" src="img/gamedesign/crashdoor.gif">
+                                <br /><br /> <p style="text-align:center;font-size:20px">
+                                    Figure 3: smash the glass door
                                 </p>
                                 <br>
                             </div>
@@ -1401,12 +1428,38 @@ public<function>   CrawlStatesEnum characterState</function>
                             <div class="accordion-inner">
                                 <br />
                                 <p>
-                                    In order to facilitate the progress of the game, I added cutscenes to guide the player, mainly when they meet the nurse robot. In fact, taking such a shot animation is the best way to show the plot. Because if you let the player walk up to the NPC and choose whether or not to talk to the NPC, that's a little too much freedom.
+                                    The mechanism of opening the cabinet with the password is actually from <i>Resident Evil 2</i>,
+                                    where you open the cabinet to get energy, but the key on the keyboard for entering the password is missing,
+                                    so the key parts can be found somewhere else. After the button is installed,
+                                    the player can input the corresponding password to get the energy clearance.
                                 </p>
-                                <img style="text-align: center ;height:auto; max-width: 80%;" src="img/gamedesign/cutscene.gif">
+                                <p>
+                                    Zhenyu was responsible for the development of this part, and I mainly assisted him to integrate it into my code and the code developed.
+                                </p>
+                                <img style="text-align: center ;height:auto; max-width: 80%;" src="img/gamedesign/cabinets.png">
                                 <br /><br /> <p style="text-align:center;font-size:20px">
-                                    Figure 1: the cutscene when Iron encounters the damaged nursing robot
+                                    Figure 1: the cabinets and the password machine
                                 </p>
+                                <div class="imgBox" style="overflow:hidden">
+                                    <div style="float:left;text-align:center">
+                                        <img style="height:auto; max-width: 80%;" src="img/gamedesign/keypad.png">
+                                        <p style="font-size:20px;text-align:center">
+                                            <br />
+                                            Figure 2: the keypad for password
+                                        </p>
+                                    </div>
+                                    <div style="float:left;text-align:center">
+                                        <img style="height:auto; max-width: 80%;" src="img/gamedesign/keypart.png">
+                                        <p style="font-size:20px;text-align:center">
+                                            <br />
+                                            Figure 3: the key part hidden in the cabinet
+                                        </p>
+                                    </div>
+                                </div>
+
+
+                                <br /><br />
+
                                 <br>
                             </div>
                             <!-- /accordion-inner -->
@@ -1419,7 +1472,7 @@ public<function>   CrawlStatesEnum characterState</function>
                     <div class="accordion-group">
                         <div class="accordion-heading">
                             <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse21">
-                                <date>Apr 27, 2022</date>
+                                <date>Apr 23, 2022</date>
                                 <plus> + </plus> Dialogue System with Audio
                             </a>
                         </div>
@@ -1427,7 +1480,24 @@ public<function>   CrawlStatesEnum characterState</function>
                             <div class="accordion-inner">
                                 <br />
                                 <p>
-                                    In order to facilitate the progress of the game, I added cutscenes to guide the player, mainly when they meet the nurse robot. In fact, taking such a shot animation is the best way to show the plot. Because if you let the player walk up to the NPC and choose whether or not to talk to the NPC, that's a little too much freedom.
+                                    We visualized Iron's voice, which, in order to avoid gender bias, is not directly gender-specific. 
+                                    Because of our excellent voice actors, Xichu Shi and Yinyun Lin, the character of Iron is brought to life.
+                                </p>
+                                <p>
+                                    Dialogue is divided into monologues and dubbing.
+                                    Identification is an important cornerstone for understanding game enjoyment 
+                                    <i>
+                                        <a href="https://link.springer.com/content/pdf/10.1007/978-3-540-74873-1_6.pdf3">(Hefner, Klimmt & Vorderer, 2007)</a>
+                                    </i>.  
+                                    Soliloquy is very useful in enhancing the identity of the character. From the perspective of the player, I have clearly felt the importance of dubbing to the game experience in the later stage.
+                                </p>
+                                <p>
+                                    Zhenyu Zhou was responsible for the implementation of the dialogue system in the first level. 
+                                    The package of a dialogue system was quoted, which was very convenient to use. After configuration, you only need to use Ink to write the corresponding story.
+                                </p>
+                                <p>
+                                    The suffixes #speaker:iron and # Audion :001 in Ink as shown in the Figure 3 are the implementation interfaces for some functions.
+                                    Based on this, I made the dynamic avatar of the conversation and called the audio.
                                 </p>
                                 <img style="text-align: center ;height:auto; max-width: 80%;" src="img/gamedesign/cutscene.gif">
                                 <br /><br /> <p style="text-align:center;font-size:20px">
@@ -1440,13 +1510,12 @@ public<function>   CrawlStatesEnum characterState</function>
                         <!-- /collapse -->
                     </div>
                     <br />
-
-                    <!-- Postprocess -->
+                    <!-- Particle System -->
                     <div class="accordion-group">
                         <div class="accordion-heading">
                             <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse22">
-                                <date>May 02, 2022</date>
-                                <plus> + </plus> Postprocess
+                                <date>Apr 28, 2022</date>
+                                <plus> + </plus> Particle System
                             </a>
                         </div>
                         <div id="collapse22" class="accordion-body collapse">
@@ -1466,13 +1535,12 @@ public<function>   CrawlStatesEnum characterState</function>
                         <!-- /collapse -->
                     </div>
                     <br />
-
-                    <!-- Playtest and Debug -->
+                    <!-- Postprocess -->
                     <div class="accordion-group">
                         <div class="accordion-heading">
                             <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse23">
-                                <date>May 10, 2022</date>
-                                <plus> + </plus> Playtest and Debug
+                                <date>May 02, 2022</date>
+                                <plus> + </plus> Postprocess
                             </a>
                         </div>
                         <div id="collapse23" class="accordion-body collapse">
@@ -1493,15 +1561,41 @@ public<function>   CrawlStatesEnum characterState</function>
                     </div>
                     <br />
 
-                    <!-- Reflections on my Research Question -->
+                    <!-- Playtest and Debug -->
                     <div class="accordion-group">
                         <div class="accordion-heading">
                             <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse24">
+                                <date>May 10, 2022</date>
+                                <plus> + </plus> Playtest and Debug
+                            </a>
+                        </div>
+                        <div id="collapse24" class="accordion-body collapse">
+                            <div class="accordion-inner">
+                                <br />
+                                <p>
+                                    In order to facilitate the progress of the game, I added cutscenes to guide the player, mainly when they meet the nurse robot. In fact, taking such a shot animation is the best way to show the plot. Because if you let the player walk up to the NPC and choose whether or not to talk to the NPC, that's a little too much freedom.
+                                </p>
+                                <img style="text-align: center ;height:auto; max-width: 80%;" src="img/gamedesign/cutscene.gif">
+                                <br /><br /> <p style="text-align:center;font-size:20px">
+                                    Figure 1: the cutscene when Iron encounters the damaged nursing robot
+                                </p>
+                                <br>
+                            </div>
+                            <!-- /accordion-inner -->
+                        </div>
+                        <!-- /collapse -->
+                    </div>
+                    <br />
+
+                    <!-- Reflections on my Research Question -->
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse25">
                                 <date>May 15, 2022</date>
                                 <plus> + </plus> Reflections on my Research Question
                             </a>
                         </div>
-                        <div id="collapse24" class="accordion-body collapse">
+                        <div id="collapse25" class="accordion-body collapse">
                             <div class="accordion-inner">
                                 <br />
                                 <p>
