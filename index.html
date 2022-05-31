@@ -63,17 +63,21 @@
         <div class="container">
             <div class="container" id="headtext" style="">
                 <br /> <br /><h1> </h1>
-                <img src="img/name.png" style="height:auto;max-width:50%;" />
+
+                <a id="name">
+                    <img src="img/name.png" style="height:auto;max-width:50%;" />
+                </a>
                 <h1> </h1>
-                <br /> <br /> 
+                <br /> <br />
 
 
 
                 <!--
-    <font color=#FF0000>U</font><font color=#C04000>n</font><font color=#F87217>v</font><font color=#FFA62F>e</font><font color=#FFD801>r</font><font color=#FFFF00>s</font><font color=#C8B560>i</font><font color=#B1FB17>t</font><font color=#5FFB17>y</font>
-    <font color=#48CCCD>C</font><font color=#57FEFF>o</font><font color=#82CAFF>l</font><font color=#38ACEC>l</font><font color=#1F45FC>e</font><font color=#0020C2>g</font><font color=#151B54>e</font>
-    <font color=#FFFFFF>L</font><font color=#E5E4E2>o</font><font color=#D1D0CE>n</font><font color=#B6B6B4>d</font><font color=#808080>o</font><font color=#404040>n</font>
-            -->
+        <font color=#FF0000>U</font><font color=#C04000>n</font><font color=#F87217>v</font><font color=#FFA62F>e</font><font color=#FFD801>r</font><font color=#FFFF00>s</font><font color=#C8B560>i</font><font color=#B1FB17>t</font><font color=#5FFB17>y</font>
+        <font color=#48CCCD>C</font><font color=#57FEFF>o</font><font color=#82CAFF>l</font><font color=#38ACEC>l</font><font color=#1F45FC>e</font><font color=#0020C2>g</font><font color=#151B54>e</font>
+        <font color=#FFFFFF>L</font><font color=#E5E4E2>o</font><font color=#D1D0CE>n</font><font color=#B6B6B4>d</font><font color=#808080>o</font><font color=#404040>n</font>
+                -->
+
                 <h1>
                     University College London
                 </h1>
@@ -84,12 +88,12 @@
                 </h1>
                 <h2>Digital Media Technology</h2>
                 <h2>Email: huriclee@outlook.com</h2>
-
+                </ul>
             </div>
             <div class="col-lg-4">
 
             </div>
-    </div>
+        </div>
     <!-- /container -->
 </div>
     <!-- /headerwrap -->
@@ -566,11 +570,14 @@
 
                 $(elm).css("opacity", "1");
                 $(elm).css("transition", "3s");
+
+         
                // $(elm).css("transition", "width .3s");
             } else {
                 $(elm).css("opacity", "0");
-                $(elm).css("transition", "0s");
+                //$(elm).css("transition", "opacity 0s");
 
+          
             }
         }
 
