@@ -10,14 +10,14 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: Raleway;
-  font-weight: 300;
-  color: #333
-}
+    font-family: Raleway;
+    font-weight: 300;
+    color: #333;
 
+}
 p {
-  line-height: 28px;
-  margin-bottom: 25px
+    line-height: 28px;
+    margin-bottom: 25px; 
 }
 
 .centered {
@@ -66,11 +66,11 @@ hr {
   color: #fff
 }
 
-#headerwrap {
-    background: url(../img/head-bg.jpg) no-repeat center top;
-    margin-top: -10px;
-    padding-top: 0px;
 
+#headerwrap {
+    background: url(../img/head-bg.jpg) no-repeat top center;
+    margin-top: 0px;
+    padding-top: 0px;
     text-align: right;
     background-attachment: relative;
     background-position: center center;
@@ -83,23 +83,36 @@ hr {
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover
+    background-size: cover;
 }
 
 
-#headerwrap h1 {
-
-  font-weight: 300;
-  font-size: 90px;
-  color: #ffffff
-}
-    #headerwrap h2 {
-        text-align: right;
-        font-family: Raleway;
-        font-size: 20px;
+    #headerwrap h1 {
         font-weight: 300;
-        color: #e7e7e7
+        font-size: 30px;
+        color: #ffffff;
+        animation: headFadein ease 3s;
+        animation-iteration-count: 1;
+        animation-fill-mode:forwards;
     }
+    @keyframes headFadein{
+        0%{
+            opacity:0;
+        }
+        100%{
+            opacity:1;
+        }
+    }
+#headerwrap h2 {
+    animation: headFadein ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    text-align: right;
+    font-family: Raleway;
+    font-size: 20px;
+    font-weight: 300;
+    color: #e7e7e7
+}
     #headerwrap h3 {
         font-family: Raleway;
         font-weight: 300;
@@ -107,7 +120,49 @@ hr {
 
     }
 
+#intro {
+    background: url(../img/port-bg.jpg) no-repeat center top;
+    color: black;
+    font-weight: 400;
+    font-family: 'Times New Roman';
+    background-attachment: relative;
+    background-position: center center;
+    width: 100%;
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    margin-top: -20px;
+    //padding-top: 400px;
+    min-height: 850px;
+}
+#introwrap{
+    min-height:850px;
+    background-color:rgb(0 0 0 / 0.1)
+}
+#port {
+    
+    color: black;
+    font-weight: 400;
+    background-attachment: relative;
+    background-position: center center;
+    width: 100%;
+    text-align:center;
+    -webkit-background-size: 100%;
+    -moz-background-size: 100%;
+    -o-background-size: 100%;
+    background-size: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 
+    min-height: 600px;
+}
 #foliowrap {
   //background-color:orangered;
 
@@ -155,15 +210,26 @@ hr {
   color: #fff;
   font-size: 38px
 }
-#row {
-    
-    margin-left:20%;
+#beforeCollappse:target {
+    opacity: 0;
+    transition:1s;
+    display:none;
+}
+.row {
+    margin-left: 40%;
     padding-left: 5%;
     padding-right: 5%;
-    text-align: center;
-    max-width: 60%;
-    background-color: rgb(0 0 0 / 0.5);
+    text-align: justify;
+    text-justify: inter-ideograph;
+    max-width: 50%;
+
+ 
 }
+.row{
+
+}
+
+
 #gamedesign {
     background: url(../img/Iron.png) no-repeat center bottom;
     background-attachment: relative;
@@ -176,7 +242,8 @@ hr {
     -o-background-size: cover;
     background-size: cover;
     color: black;
-
+    padding: 2% 0 2% 0;
+   
     text-align:center;
 }
 #animation {
@@ -191,9 +258,10 @@ hr {
     -o-background-size: cover;
     //background-size: cover;
     color: black;
+    padding: 2% 0 2% 0;
 }
 #gamedesignheading {
-    background-color: gray;
+    //background-color: gray;
     width: 100%;
     //background-attachment: relative;
 }
@@ -226,7 +294,7 @@ hr {
 .about {
     padding-top: 40px;
     text-align: center;
- 
+
 }
 
 .about h3 {
@@ -243,30 +311,17 @@ hr {
   font-size: 14px;
   color: #bebdbd;
   font-weight: 700
+
 }
 .about h6 {
         font-size: 30px;
-        text-align: left;
+        text-align:left;
         color: #ff7d48
 }
-.about p {
-  text-align: left
-}
-#introduction {
-    width: 100%;
-    text-align: center;
-    
-    width: 100%;
-    background-attachment: relative;
-    -webkit-background-size: 100%;
-    -moz-background-size: 100%;
-    -o-background-size: 100%;
-    background-size: 100%;
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-}
+    .about p {
+     
+    }
+
 #chartwrap {
     width: 100%;
     text-align: center;
@@ -386,7 +441,7 @@ hr {
   margin-top: :30px;
   padding-bottom: 10px;
   text-align: left;
-  border-bottom: 1px solid #ccc
+ // border-bottom: 1px rgb(255 255 255 / 0.39)
 }
 .accordion-inner p {
 color:gainsboro
