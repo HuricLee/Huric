@@ -29,7 +29,7 @@
     <!-- ========== MAIN MENU ========== -->
     <div class="container">
         <ul id="gn-menu" class="gn-menu-main">
-            <li class="gn-trigger">
+            <li class="gn-trigger" style="display:block">
                 <a class="gn-icon gn-icon-menu"><span>Menu</span></a>
                 <nav class="gn-menu-wrapper">
                     <div class="gn-scroller">
@@ -96,13 +96,13 @@
     <!-- ABOUT SECTION -->
     <section id="introduction" name="introduction"></section>
     <div id="intro">
-        <div id="introwrap" style="max-width: 45%; margin-left: 0;">
-            <div style="margin-left: 7%; padding-left: 55px; padding-right: 55px; padding-top: 400px; ">
-                <div style="text-align: left; ">
+        <ul id="introwrap" style="max-width: 45%; margin-left: 0;">
+            <li style="list-style: none;margin-left: 7%; padding-left: 55px; padding-right: 55px; padding-top: 400px; ">
+                <a style="text-align: left; ">
 
                     <h3 style="color: white; font-weight: 400;  font-family: 'Times New Roman';">About Huric</h3>
                     <h5 style="color: black; font-weight: 400; font-family: 'Times New Roman'; ">Jufeng Li</h5>
-                </div>
+                </a>
                 <hr>
                 <br>
                 <h4 style="color: black; font-weight: 400;  font-family: 'Times New Roman'; ">An avid gamer and game maker. I love games and also create games whilist involved in animations, visulizations etc.<br />-</h4>
@@ -111,9 +111,9 @@
                     etc.., and used software like Maya, AE and PR to make animations. Besides my developing skills,during my previous projects, I was always a lead to make decisions. With technical skills and critical
                     thinking, I always provide good ideas for my games and animations. Plus, I like to listen to different voices and then discuss with co-workers.
                 </p>
-            </div>
+            </li>
             
-        </div>
+        </ul>
         <section id="portfolio" name="portfolio"></section>
 
     </div>
@@ -162,119 +162,122 @@
         <!-- ACCORDION -->
 
 
-        <div class="row" id="gamedesignrow" aria-expanded="true" style="z-index:0">
+        <ul class="row" id="gamedesignrow" aria-expanded="true" style="z-index:0">
             <!-- Game Design Blog-->
-            <div class="accordion-heading about">
+            <li style="list-style: none;">
+                <div class="accordion-heading about">
 
 
-                <h6>
-                    My Blog
-                </h6>
+                    <h6>
+                        My Blog
+                    </h6>
 
 
-            </div>
-
-            <br />
-            <!-- The Start -->
-            <div class="accordion-group">
-                <div class="accordion-heading">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne" aria-expanded="true">
-                        <date>Feb 01, 2022</date>
-                        <plus> + </plus> The Start
-                    </a>
                 </div>
-                <!-- /accordion-heading -->
-                <div id="collapseOne" class="accordion-body collapse in" aria-expanded="true">
-                    <br>
-                    <div class="accordion-inner">
-                        <p>
-                            After discussion in our group today,
-                            we decided to continue the game in the first semester and make the second level.
-                            The setting is set in a hospital. The division of labor is similar to that in the first semester.
-                            I will be responsible for the main program, logic and implementation mechanism.
-                        </p>
-                        <p>
-                            ……
-                        </p>
-                        <!-- <p><img class="img-circle" src="img/avatar.jpg" height="50px" width="50px"> - <i>Alex Webber.</i></p>-->
+            </li>
+            <li style="list-style: none;" id="blogcontent">
+                <br />
+                <!-- The Start -->
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne" aria-expanded="true">
+                            <date>Feb 01, 2022</date>
+                            <plus> + </plus> The Start
+                        </a>
                     </div>
-                    <!-- /accordion-inner -->
-                </div>
-                <!-- /collapse -->
-            </div>
-
-            <br>
-
-            <!-- Thoughts of the Research Question -->
-            <div class="accordion-group">
-                <div class="accordion-heading">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="GameBlog.html#collapseTwo" aria-expanded="true">
-                        <date>Feb 03, 2022</date>
-                        <plus> + </plus> Thoughts of the Research Question
-                    </a>
-                </div>
-                <div id="collapseTwo" class="accordion-body collapse" aria-expanded="true">
-                    <div class="accordion-inner">
-                        <p>
-                            <br>
-                            Before designing the game mechanics,
-                            I first thought about what I wanted to continue to discuss and research in this game.
-                            In the first level, I mainly explored how to design the right mechanics in such a game.
-                            At this level, I want to go deeper, how much does the design of the mechanics affect the game, and how does it affect the main character?
-                            How much does it affect the player's experience?
-                        </p>
-                        <p>
-                            ……
-                        </p>
-                    </div>
-                    <!-- /accordion-inner -->
-                </div>
-                <!-- /collapse -->
-            </div>
-
-            <br>
-
-            <!-- Scene Design -->
-            <div class="accordion-group">
-                <div class="accordion-heading">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="GameBlog.html#collapseThree" aria-expanded="true">
-                        <date>Feb 04, 2022</date>
-                        <plus> + </plus> Scene Design
-                    </a>
-                </div>
-                <div id="collapseThree" class="accordion-body collapse" aria-expanded="true">
-                    <div class="accordion-inner">
-                        <p>
-                            <br>
-                            First, the design and construction of the scene. Due to time constraints, we still used existing material for the scenes.
-                            Today, I looked for the scene materials of the second level with my friends.
-                            An official resource pack for Unreal Engine was found, but UE was not installed.
-                            So I went to install UE and try to check the required hospital scene materials.
-                        </p>
-                        <p>
-                            ……
-                        </p>
-                    </div>
-                    <!-- /accordion-inner -->
-                </div>
-                <!-- /collapse -->
-            </div>
-
-
-            <div class="accordion-group">
-                <div class="accordion-heading">
-                    <a href="GameBlog.html">
+                    <!-- /accordion-heading -->
+                    <div id="collapseOne" class="accordion-body collapse in" aria-expanded="true">
                         <br>
-                        <plus> ❐ </plus> More...
-                    </a>
+                        <div class="accordion-inner">
+                            <p>
+                                After discussion in our group today,
+                                we decided to continue the game in the first semester and make the second level.
+                                The setting is set in a hospital. The division of labor is similar to that in the first semester.
+                                I will be responsible for the main program, logic and implementation mechanism.
+                            </p>
+                            <p>
+                                ……
+                            </p>
+                            <!-- <p><img class="img-circle" src="img/avatar.jpg" height="50px" width="50px"> - <i>Alex Webber.</i></p>-->
+                        </div>
+                        <!-- /accordion-inner -->
+                    </div>
+                    <!-- /collapse -->
                 </div>
 
-                <!-- /collapse -->
-            </div>
-            <!-- /accordion-group -->
-            <!--End of Game Design Blog-->
-            <br>
-        </div>
+                <br>
+
+                <!-- Thoughts of the Research Question -->
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="GameBlog.html#collapseTwo" aria-expanded="true">
+                            <date>Feb 03, 2022</date>
+                            <plus> + </plus> Thoughts of the Research Question
+                        </a>
+                    </div>
+                    <div id="collapseTwo" class="accordion-body collapse" aria-expanded="true">
+                        <div class="accordion-inner">
+                            <p>
+                                <br>
+                                Before designing the game mechanics,
+                                I first thought about what I wanted to continue to discuss and research in this game.
+                                In the first level, I mainly explored how to design the right mechanics in such a game.
+                                At this level, I want to go deeper, how much does the design of the mechanics affect the game, and how does it affect the main character?
+                                How much does it affect the player's experience?
+                            </p>
+                            <p>
+                                ……
+                            </p>
+                        </div>
+                        <!-- /accordion-inner -->
+                    </div>
+                    <!-- /collapse -->
+                </div>
+
+                <br>
+
+                <!-- Scene Design -->
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="GameBlog.html#collapseThree" aria-expanded="true">
+                            <date>Feb 04, 2022</date>
+                            <plus> + </plus> Scene Design
+                        </a>
+                    </div>
+                    <div id="collapseThree" class="accordion-body collapse" aria-expanded="true">
+                        <div class="accordion-inner">
+                            <p>
+                                <br>
+                                First, the design and construction of the scene. Due to time constraints, we still used existing material for the scenes.
+                                Today, I looked for the scene materials of the second level with my friends.
+                                An official resource pack for Unreal Engine was found, but UE was not installed.
+                                So I went to install UE and try to check the required hospital scene materials.
+                            </p>
+                            <p>
+                                ……
+                            </p>
+                        </div>
+                        <!-- /accordion-inner -->
+                    </div>
+                    <!-- /collapse -->
+                </div>
+
+
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a href="GameBlog.html">
+                            <br>
+                            <plus> ❐ </plus> More...
+                        </a>
+                    </div>
+
+                    <!-- /collapse -->
+                </div>
+                <!-- /accordion-group -->
+                <!--End of Game Design Blog-->
+                <br>
+            </li>
+        </ul>
         <!-- Accordion -->
         <!-- /col-lg-6 -->
 
@@ -297,119 +300,121 @@
         <!-- ACCORDION -->
 
 
-        <div class="row" id="animationrow" aria-expanded="true" style="z-index:0">
+        <ul class="row" id="animationrow" aria-expanded="true" style="z-index:0">
             <!-- Game Design Blog-->
-            <div class="accordion-heading about">
+            <li style="list-style: none">
+                <div class="accordion-heading about">
 
 
-                <h6>
-                    My Blog
-                </h6>
+                    <h6>
+                        My Blog
+                    </h6>
 
 
-            </div>
-
-            <br />
-            <!-- The Start -->
-            <div class="accordion-group">
-                <div class="accordion-heading">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapse1" aria-expanded="true">
-                        <date>Feb 01, 2022</date>
-                        <plus> + </plus> The Start
-                    </a>
                 </div>
-                <!-- /accordion-heading -->
-                <div id="collapse1" class="accordion-body collapse in" aria-expanded="true">
-                    <br>
-                    <div class="accordion-inner">
-                        <p>
-                            After discussion in our group today,
-                            we decided to continue the game in the first semester and make the second level.
-                            The setting is set in a hospital. The division of labor is similar to that in the first semester.
-                            I will be responsible for the main program, logic and implementation mechanism.
-                        </p>
-                        <p>
-                            ……
-                        </p>
-                        <!-- <p><img class="img-circle" src="img/avatar.jpg" height="50px" width="50px"> - <i>Alex Webber.</i></p>-->
+
+                <br />
+                <!-- The Start -->
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapse1" aria-expanded="true">
+                            <date>Feb 01, 2022</date>
+                            <plus> + </plus> The Start
+                        </a>
                     </div>
-                    <!-- /accordion-inner -->
-                </div>
-                <!-- /collapse -->
-            </div>
-
-            <br>
-
-            <!-- Thoughts of the Research Question -->
-            <div class="accordion-group">
-                <div class="accordion-heading">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapse2" aria-expanded="true">
-                        <date>Feb 03, 2022</date>
-                        <plus> + </plus> Thoughts of the Research Question
-                    </a>
-                </div>
-                <div id="collapse2" class="accordion-body collapse" aria-expanded="true">
-                    <div class="accordion-inner">
-                        <p>
-                            <br>
-                            Before designing the game mechanics,
-                            I first thought about what I wanted to continue to discuss and research in this game.
-                            In the first level, I mainly explored how to design the right mechanics in such a game.
-                            At this level, I want to go deeper, how much does the design of the mechanics affect the game, and how does it affect the main character?
-                            How much does it affect the player's experience?
-                        </p>
-                        <p>
-                            ……
-                        </p>
-                    </div>
-                    <!-- /accordion-inner -->
-                </div>
-                <!-- /collapse -->
-            </div>
-
-            <br>
-
-            <!-- Scene Design -->
-            <div class="accordion-group">
-                <div class="accordion-heading">
-                    <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapse3" aria-expanded="true">
-                        <date>Feb 04, 2022</date>
-                        <plus> + </plus> Scene Design
-                    </a>
-                </div>
-                <div id="collapse3" class="accordion-body collapse" aria-expanded="true">
-                    <div class="accordion-inner">
-                        <p>
-                            <br>
-                            First, the design and construction of the scene. Due to time constraints, we still used existing material for the scenes.
-                            Today, I looked for the scene materials of the second level with my friends.
-                            An official resource pack for Unreal Engine was found, but UE was not installed.
-                            So I went to install UE and try to check the required hospital scene materials.
-                        </p>
-                        <p>
-                            ……
-                        </p>
-                    </div>
-                    <!-- /accordion-inner -->
-                </div>
-                <!-- /collapse -->
-            </div>
-
-
-            <div class="accordion-group">
-                <div class="accordion-heading">
-                    <a href="AnimationBlog.html">
+                    <!-- /accordion-heading -->
+                    <div id="collapse1" class="accordion-body collapse in" aria-expanded="true">
                         <br>
-                        <plus> ❐ </plus> More...
-                    </a>
+                        <div class="accordion-inner">
+                            <p>
+                                After discussion in our group today,
+                                we decided to continue the game in the first semester and make the second level.
+                                The setting is set in a hospital. The division of labor is similar to that in the first semester.
+                                I will be responsible for the main program, logic and implementation mechanism.
+                            </p>
+                            <p>
+                                ……
+                            </p>
+                            <!-- <p><img class="img-circle" src="img/avatar.jpg" height="50px" width="50px"> - <i>Alex Webber.</i></p>-->
+                        </div>
+                        <!-- /accordion-inner -->
+                    </div>
+                    <!-- /collapse -->
                 </div>
 
-                <!-- /collapse -->
-            </div>
-            <!-- /accordion-group -->
-            <!--End of Game Design Blog-->
-            <br>
-        </div>
+                <br>
+
+                <!-- Thoughts of the Research Question -->
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapse2" aria-expanded="true">
+                            <date>Feb 03, 2022</date>
+                            <plus> + </plus> Thoughts of the Research Question
+                        </a>
+                    </div>
+                    <div id="collapse2" class="accordion-body collapse" aria-expanded="true">
+                        <div class="accordion-inner">
+                            <p>
+                                <br>
+                                Before designing the game mechanics,
+                                I first thought about what I wanted to continue to discuss and research in this game.
+                                In the first level, I mainly explored how to design the right mechanics in such a game.
+                                At this level, I want to go deeper, how much does the design of the mechanics affect the game, and how does it affect the main character?
+                                How much does it affect the player's experience?
+                            </p>
+                            <p>
+                                ……
+                            </p>
+                        </div>
+                        <!-- /accordion-inner -->
+                    </div>
+                    <!-- /collapse -->
+                </div>
+
+                <br>
+
+                <!-- Scene Design -->
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapse3" aria-expanded="true">
+                            <date>Feb 04, 2022</date>
+                            <plus> + </plus> Scene Design
+                        </a>
+                    </div>
+                    <div id="collapse3" class="accordion-body collapse" aria-expanded="true">
+                        <div class="accordion-inner">
+                            <p>
+                                <br>
+                                First, the design and construction of the scene. Due to time constraints, we still used existing material for the scenes.
+                                Today, I looked for the scene materials of the second level with my friends.
+                                An official resource pack for Unreal Engine was found, but UE was not installed.
+                                So I went to install UE and try to check the required hospital scene materials.
+                            </p>
+                            <p>
+                                ……
+                            </p>
+                        </div>
+                        <!-- /accordion-inner -->
+                    </div>
+                    <!-- /collapse -->
+                </div>
+
+
+                <div class="accordion-group">
+                    <div class="accordion-heading">
+                        <a href="AnimationBlog.html">
+                            <br>
+                            <plus> ❐ </plus> More...
+                        </a>
+                    </div>
+
+                    <!-- /collapse -->
+                </div>
+                <!-- /accordion-group -->
+                <!--End of Game Design Blog-->
+                <br>
+            </li>
+        </ul>
         <!-- Accordion -->
         <!-- /col-lg-6 -->
 
@@ -557,6 +562,7 @@
 
                 $(elm).css("opacity", "1");
                 $(elm).css("transition", "3s");
+               // $(elm).css("transition", "width .3s");
             } else {
                 $(elm).css("opacity", "0");
 

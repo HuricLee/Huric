@@ -27,11 +27,11 @@ p {
 a {
   color: #3bc492;
   word-wrap: break-word;
-  -webkit-transition: color .1s ease-in, background .1s ease-in;
-  -moz-transition: color .1s ease-in, background .1s ease-in;
-  -ms-transition: color .1s ease-in, background .1s ease-in;
-  -o-transition: color .1s ease-in, background .1s ease-in;
-  transition: color .1s ease-in, background .1s ease-in
+ // -webkit-transition: color .1s ease-in, background .1s ease-in;
+ // -moz-transition: color .1s ease-in, background .1s ease-in;
+ // -ms-transition: color .1s ease-in, background .1s ease-in;
+//  -o-transition: color .1s ease-in, background .1s ease-in;
+//  transition: color .1s ease-in, background .1s ease-in
 }
 
 a:hover, a:focus {
@@ -41,11 +41,11 @@ a:hover, a:focus {
 }
 
 a:before, a:after {
-  -webkit-transition: color .1s ease-in, background .1s ease-in;
-  -moz-transition: color .1s ease-in, background .1s ease-in;
-  -ms-transition: color .1s ease-in, background .1s ease-in;
-  -o-transition: color .1s ease-in, background .1s ease-in;
-  transition: color .1s ease-in, background .1s ease-in
+ // -webkit-transition: color .1s ease-in, background .1s ease-in;
+ // -moz-transition: color .1s ease-in, background .1s ease-in;
+ // -ms-transition: color .1s ease-in, background .1s ease-in;
+ // -o-transition: color .1s ease-in, background .1s ease-in;
+ // transition: color .1s ease-in, background .1s ease-in
 }
 
 hr {
@@ -85,7 +85,7 @@ hr {
     -o-background-size: cover;
     background-size: cover;
 }
-
+ 
 
     #headerwrap h1 {
         font-weight: 300;
@@ -93,7 +93,7 @@ hr {
         color: #ffffff;
         animation: headFadein ease 3s;
         animation-iteration-count: 1;
-        animation-fill-mode:forwards;
+        animation-fill-mode: forwards;
     }
     @keyframes headFadein{
         0%{
@@ -140,10 +140,19 @@ hr {
     //padding-top: 400px;
     min-height: 850px;
 }
-#introwrap{
-    min-height:850px;
-    background-color:rgb(0 0 0 / 0.1)
-}
+
+
+#introwrap {
+        min-height: 850px;
+        background-color: rgb(0 0 0 / 0)
+    }
+
+
+    #introwrap:hover {
+        //min-height: 850px;
+        transition:1s;
+        background-color: rgb(0 0 0 / 0.3)
+    }
 #port {
     
     color: black;
@@ -243,8 +252,19 @@ hr {
     background-size: cover;
     color: black;
     padding: 2% 0 2% 0;
-   
-    text-align:center;
+    background-color: rgb(0 0 0 / 0);
+    text-align: center;
+}
+#gamedesignrow {
+    background-color: rgb(0 0 0 / 0);
+}
+#gamedesignrow:hover {
+    background-color: rgb(0 0 0 / 0.3);
+}
+#gamedesignheading {
+    //background-color: gray;
+    width: 100%;
+    //background-attachment: relative;
 }
 #animation {
     background: url(../img/Ensemble.png) no-repeat center bottom;
@@ -260,11 +280,13 @@ hr {
     color: black;
     padding: 2% 0 2% 0;
 }
-#gamedesignheading {
-    //background-color: gray;
-    width: 100%;
-    //background-attachment: relative;
+#animationrow {
+    background-color: rgb(0 0 0 / 0);
 }
+
+    #animationrow:hover {
+        background-color: rgb(0 0 0 / 0.3);
+    }
 
 #testimonial h2 {
     color: #fff;
@@ -548,18 +570,20 @@ color:gainsboro
   z-index: 1
 }
 
-.gn-menu-main a {
-  display: block;
-  height: 100%;
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
+    .gn-menu-main a {
+        display: block;
+        height: 100%;
+        color: black;
+        text-decoration: none;
+        cursor: pointer;
+        transition: 0.5s;
+    }
 
-.gn-menu-main a:hover, .gn-menu li.gn-search-item:hover, .gn-menu li.gn-search-item:hover a {
-  background: rgb(0 0 0 / 0);
-  color: #fff
-}
+        .gn-menu-main a:hover, .gn-menu li.gn-search-item:hover, .gn-menu li.gn-search-item:hover a {
+            background: rgb(0 0 0 / 0);
+            color: #fff;
+            transition: 0.5s;
+        }
 
     .gn-menu-main > li {
         display: block;
@@ -837,17 +861,20 @@ input.gn-search:focus {
     height: 3px;
     background: rgb(0 0 0 / 0);
     box-shadow: 0 3px 0, 0 -3px 0, 0 -9px 0,0 -15px 0;
-    content: ''
+    content: '';
+    transition: 0.5s;
 }
 
 .gn-icon-menu:hover::before, .gn-icon-menu.gn-selected:hover::before {
     background: rgb(0 0 0 / 0);
     box-shadow: 0 3px #fff, 0 -3px #fff, 0 -9px #fff,0 -15px #fff;
+    transition: 0.5s;
 }
 
 .gn-icon-menu.gn-selected::before {
- background: rgb(0 0 0 / 0);
+    background: rgb(0 0 0 / 0);
     box-shadow: 0 3px 0, 0 -3px 0, 0 -9px 0,0 -15px 0;
+    transition: 0.5s;
 }
 
 .gn-menu-wrapper.gn-open-all, .gn-menu-wrapper.gn-open-part {
