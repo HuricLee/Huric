@@ -147,11 +147,18 @@ hr {
         background-color: rgb(0 0 0 / 0)
     }
 
-
+    #introwrap h3, h5, h4, p {
+        color: #373737 ;
+            text-align: justify;
+        text-justify: inter-ideograph;
+        //font-weight: 400;
+        font-family: Arial;
+    }
     #introwrap:hover {
         //min-height: 850px;
         transition:1s;
-        background-color: rgb(0 0 0 / 0.3)
+        background-color: rgb(0 0 0 / 0.3);
+        
     }
 #port {
     
