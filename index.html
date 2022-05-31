@@ -39,7 +39,7 @@
                             </li>
                             -->
                             <li><a href="#home" class="gn-icon gn-icon-home smoothscroll">Home</a></li>
-                            <li><a href="#about" class="gn-icon gn-icon-archive smoothscroll">About</a></li>
+                            <li><a href="#introduction" class="gn-icon gn-icon-archive smoothscroll">About</a></li>
                             <li><a href="#portfolio" class="gn-icon gn-icon-pictures smoothscroll">Portfolio</a></li>
                             <li><a href="#gamedesignblog" class="gn-icon gn-icon-article smoothscroll">Game Design Blog</a></li>
                             <li><a href="#animationblog" class="gn-icon gn-icon-article smoothscroll">3D Animation Blog</a></li>
@@ -81,9 +81,9 @@
     </div>
     <!-- /headerwrap -->
     <!-- ABOUT SECTION -->
-    <section id="about" name="about"></section>
+    <section id="introduction" name="introduction"></section>
 
-    <div class="container about">
+    <div class="container">
         <div class="col-lg-6 col-lg-offset-3">
             <h3>About Huric</h3>
             <h5>Jufeng Li</h5>
@@ -146,6 +146,8 @@
             <br>
             <br>
             <img src="img/potfolio.png" style="height:auto;max-width:80%">
+            <br>
+            <br>
             <!---->
         </div>
         <!-- /container -->
@@ -159,7 +161,7 @@
             <div class="col-lg-6 about">
                 <h3>Blogs of my Development</h3>
                 <h5>POSTGRADUATE</h5>
-               <br />
+                <br />
             </div>
             <!-- /col-lg-6 -->
 
@@ -167,21 +169,33 @@
         </div>
         <!-- /row -->
     </div>
+
     <div id="gamedesign">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-3"></div>
-                <div class="col-lg-6 about">
+     
+            <div class="row" id="row">
 
 
-                    <!-- ACCORDION -->
-                    <div class="accordion" id="accordion2">
-                        <h6>Module: Game Design</h6>
 
+
+                <!-- ACCORDION -->
+                <div class="accordion" id="accordion2">
+
+                    <div id="beforeCollappse">
+                        <div class="accordion-heading about">
+                            <br>
+                            <br>
+                            <h6>Game: Iron</h6>
+                            <br>
+                            <br>
+                        </div>
+                    </div>
+
+                    <!-- Game Design Blog-->
+                    <div>
                         <!-- The Start -->
                         <div class="accordion-group">
                             <div class="accordion-heading">
-                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="GameBlog.html#collapseOne" aria-expanded="true">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne" aria-expanded="true">
                                     <date>Feb 01, 2022</date>
                                     <plus> + </plus> The Start
                                 </a>
@@ -213,12 +227,12 @@
                         <!-- Thoughts of the Research Question -->
                         <div class="accordion-group">
                             <div class="accordion-heading">
-                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="GameBlog.html#collapseTwo" aria-expanded="false">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="GameBlog.html#collapseTwo" aria-expanded="true">
                                     <date>Feb 03, 2022</date>
                                     <plus> + </plus> Thoughts of the Research Question
                                 </a>
                             </div>
-                            <div id="collapseTwo" class="accordion-body collapse" aria-expanded="false">
+                            <div id="collapseTwo" class="accordion-body collapse" aria-expanded="true">
                                 <div class="accordion-inner">
                                     <p>
                                         <br>
@@ -242,12 +256,12 @@
                         <!-- Scene Design -->
                         <div class="accordion-group">
                             <div class="accordion-heading">
-                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="GameBlog.html#collapseThree" aria-expanded="false">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="GameBlog.html#collapseThree" aria-expanded="true">
                                     <date>Feb 04, 2022</date>
                                     <plus> + </plus> Scene Design
                                 </a>
                             </div>
-                            <div id="collapseThree" class="accordion-body collapse" aria-expanded="false">
+                            <div id="collapseThree" class="accordion-body collapse" aria-expanded="true">
                                 <div class="accordion-inner">
                                     <p>
                                         <br>
@@ -263,29 +277,96 @@
                             <!-- /collapse -->
                         </div>
 
-                        <br>
 
-                        <!-- Scene Construction -->
                         <div class="accordion-group">
                             <div class="accordion-heading">
-                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="GameBlog.html#collapseFour" aria-expanded="false">
-                                    <date>Feb 07, 2022</date>
-                                    
-                                    <plus> + </plus>Scene Construction
+                                <a href="GameBlog.html">
+                                    <br>
+                                    <plus> ❐ </plus> More...
                                 </a>
                             </div>
-                            <div id="collapseFour" class="accordion-body collapse" aria-expanded="false">
+
+                            <!-- /collapse -->
+                        </div>
+                        <!-- /accordion-group -->
+                    </div>
+                    <!--End of Game Design Blog-->
+                    <br>
+                </div>
+                <!-- Accordion -->
+            </div>
+            <!-- /col-lg-6 -->
+
+
+        </div>
+        <!-- /row -->
+   
+    
+
+    <section id="animationblog" name="animationblog"></section>
+    <div id="animation">
+        <div class="container">
+            <div class="row" >
+                <div class="col-lg-3" ></div>
+                <div class="col-lg-6 about" id="row">
+
+
+                    <!-- ACCORDION -->
+                    <div class="accordion" id="accordion2">
+                        <h6>Animation: Ensemble</h6>
+
+                        <!-- The Start -->
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="GameBlog.html#collapse1" aria-expanded="true">
+                                    <date>Feb 01, 2022</date>
+                                    <plus> + </plus> The Start
+                                </a>
+                            </div>
+                            <!-- /accordion-heading -->
+                            <div id="collapse1" class="accordion-body collapse in" aria-expanded="true">
+                                <br>
                                 <div class="accordion-inner">
-                                    <br>
                                     <p>
-                                        Today, I imported the scene into UE and found that all the material formats were in UE format, which could not be used directly.
-                                        I preliminarily understood the operation mode of UE and exported the model,
-                                        but there was no material for the FBX model. Then,
-                                        I had to export each part individually and fill each material one by one in Unity. In addition,
-                                        I learned some specific details of URP material in Unity,
-                                        learned the meaning of exported “_AO”(ambient occlusion), “_R”(roughness), “_M”(metallic) and
-                                        other texture formats, which could be fille into  corresponding part of the URP material.
-                                        I really learned something new. I was actually a bit confused about the material before.
+                                        After discussion in our group today,
+                                        we decided to continue the game in the first semester and make the second level.
+                                        The setting is set in a hospital. The division of labor is similar to that in the first semester.
+                                        I will be responsible for the main program, logic and implementation mechanism.
+                                    </p>
+                                    <p>
+                                        In terms of mechanic implementation, many things can be used in the first level, such as maps, packs, energy.
+                                        In this level, I need to complete the energy system and optimize some functions of the first level.
+                                        I want to be different from the first level.
+                                    </p>
+                                    <!-- <p><img class="img-circle" src="img/avatar.jpg" height="50px" width="50px"> - <i>Alex Webber.</i></p>-->
+                                </div>
+                                <!-- /accordion-inner -->
+                            </div>
+                            <!-- /collapse -->
+                        </div>
+
+                        <br>
+
+                        <!-- Thoughts of the Research Question -->
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="GameBlog.html#collapse2" aria-expanded="false">
+                                    <date>Feb 03, 2022</date>
+                                    <plus> + </plus> Thoughts of the Research Question
+                                </a>
+                            </div>
+                            <div id="collapse2" class="accordion-body collapse" aria-expanded="false">
+                                <div class="accordion-inner">
+                                    <p>
+                                        <br>
+                                        Before designing the game mechanics,
+                                        I first thought about what I wanted to continue to discuss and research in this game.
+                                        In the first level, I mainly explored how to design the right mechanics in such a game.
+                                        At this level, I want to go deeper, how much does the design of the mechanics affect the game, and how does it affect the main character?
+                                        How much does it affect the player's experience?
+                                    </p>
+                                    <p>
+                                        In addition, I learned the term immersion for the first time last semester, but many students, including me, were advised that immersion was not specific enough......
                                     </p>
                                 </div>
                                 <!-- /accordion-inner -->
@@ -293,10 +374,38 @@
                             <!-- /collapse -->
                         </div>
 
+                        <br>
+
+                        <!-- Scene Design -->
+                        <div class="accordion-group">
+                            <div class="accordion-heading">
+                                <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="GameBlog.html#collapse3" aria-expanded="false">
+                                    <date>Feb 04, 2022</date>
+                                    <plus> + </plus> Scene Design
+                                </a>
+                            </div>
+                            <div id="collapse3" class="accordion-body collapse" aria-expanded="false">
+                                <div class="accordion-inner">
+                                    <p>
+                                        <br>
+                                        First, the design and construction of the scene. Due to time constraints, we still used existing material for the scenes.
+                                        Today, I looked for the scene materials of the second level with my friends.
+                                        An official resource pack for Unreal Engine was found, but UE was not installed.
+                                        So I went to install UE and try to check the required hospital scene materials.
+                                    </p>
+
+                                </div>
+                                <!-- /accordion-inner -->
+                            </div>
+                            <!-- /collapse -->
+                        </div>
+
+ 
+                       
 
                         <div class="accordion-group">
                             <div class="accordion-heading">
-                                <a href="GameBlog.html">
+                                <a href="AnimationBlog.html">
                                     <br>
                                     <plus> ❐ </plus> More...
                                 </a>

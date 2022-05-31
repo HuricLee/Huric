@@ -1,0 +1,1848 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Game Design-Iron</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicons -->
+    <link href="img/favicon.png" rel="icon">
+    <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic|Raleway:400,300,700" rel="stylesheet">
+
+    <!-- Bootstrap CSS File -->
+    <link href="lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Main Stylesheet File -->
+    <link href="css/style_Iron.css" rel="stylesheet">
+
+</head>
+
+<body data-spy="scroll" data-offset="0" data-target="#gn-menu">
+    <style>
+        @font-face {
+            font-family: 'myfont';
+            src: url('StayAwayDemoRegular.ttf') format('truetype');
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var effect1 = document.getElementById('wind');
+            var effect2 = document.getElementById('windhall');
+            var effect3 = document.getElementById('surgeryroom');
+
+            effect1.pause();
+            effect2.pause();
+            effect3.pause();
+        }
+        function play(string) {
+            var effect = document.getElementById(string);
+            if (effect.paused) {
+
+                var effect1 = document.getElementById('wind');
+                var effect2 = document.getElementById('windhall');
+                var effect3 = document.getElementById('surgeryroom');
+
+                effect1.pause();
+                effect2.pause();
+                effect3.pause();
+
+                effect.play();
+            } else {
+                effect.pause();
+                effect.currentTime = 0;
+            }
+        }
+    </script>
+    <!-- ========== MAIN MENU ========== -->
+    <div class="container">
+        <ul id="gn-menu" class="gn-menu-main">
+            <li class="gn-trigger">
+                <a class="gn-icon gn-icon-menu"><span>Menu</span></a>
+                <nav class="gn-menu-wrapper">
+                    <div class="gn-scroller">
+                        <ul class="gn-menu">
+                            <!--
+                            <li class="gn-search-item">
+                                <input placeholder="Search" type="search" class="gn-search">
+                                <a class="gn-icon gn-icon-search"><span>Search</span></a>
+                            </li>
+                            -->
+                            <li><a href="https://huriclee.github.io/" class="gn-icon gn-icon-home">Home</a></li>
+                            <li><a href="GameBlog.html#about" class="gn-icon gn-icon-archive smoothscroll">About</a></li>
+                            <li><a href="GameBlog.html#portfolio" class="gn-icon gn-icon-pictures smoothscroll">Portfolio</a></li>
+                            <li><a href="GameBlog.html#blog" class="gn-icon gn-icon-article smoothscroll">Game Design Blog</a></li>
+                            <li><a href="GameBlog.html#contact" class="gn-icon gn-icon-envelop smoothscroll">Contact</a></li>
+                        </ul>
+                    </div>
+                    <!-- /gn-scroller -->
+                </nav>
+            </li>
+            <li><a href="GameBlog.html#home" class="smoothscroll">Huric</a></li>
+        </ul>
+    </div>
+    <!-- /container -->
+    <!-- ========== HEADER SECTION ========== -->
+    <section id="home" name="home"></section>
+    <div id="headerwrap">
+        <div class="container">
+            <div class="container">
+                <h2><br>&nbsp;</h2>
+                <h1 style="font-family:myfont">IRON</h1>
+
+                <h2>&nbsp;</h2>
+                <h4>Group Members</h4>
+                <h2>
+                    Jufeng Li
+                    <br>
+                    <br>
+                    Zhenyu Zhou
+                    <br>
+                    <br>
+                    Yinyun Lin
+                    <br>
+                    <br>
+                    Xichu Shi
+
+                </h2>
+
+            </div>
+            <div class="col-lg-4">
+
+            </div>
+        </div>
+        <!-- /container -->
+    </div>
+    <!-- /headerwrap -->
+    <!-- ABOUT SECTION -->
+    <section id="about" name="about"></section>
+    <div class="container about">
+
+        <h3>About Iron</h3>
+        <hr>
+        <br>
+        <h4>
+            This is a continuation of our assignment from the previous term and is the second level of the game IRON.
+        </h4>
+
+        <p style="text-align:justify; text-justify:inter-ideograph;">
+            <b>·</b>　The game is a puzzle game set in an energy-depleted wasteland world.
+            <br>
+            <b>·</b>　The scene is in an abandoned hospital where IRON encounters a nursing robot that has run out of energy. He can choose to use his energy to rescue her or not.
+            <br>
+            <b>·</b>　If he chooses to rescue her, he will receive fragments of memory about the human-robot relationship and a clue to collect more energy.
+
+        </p>
+
+        <!-- /col-lg-6 -->
+    </div>
+    <!-- /container -->
+
+    <section id="blog" name="blog"></section>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="about">
+                <h3>Blogs of my Development</h3>
+                <br>
+                <br>
+
+                <!-- ACCORDION -->
+                <div class="accordion" id="accordion2">
+                    <!-- The Start -->
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="GameBlog.html#collapseOne" aria-expanded="false">
+                                <date>Feb 01, 2022</date>
+                                <plus> + </plus> The Start
+                            </a>
+                        </div>
+                        <!-- /accordion-heading -->
+                        <div id="collapseOne" class="accordion-body collapse" aria-expanded="false">
+                            <br>
+                            <div class="accordion-inner">
+                                <p>
+                                    After discussion in our group today,
+                                    we decided to continue the game in the first semester and make the second level.
+                                    The setting is set in a hospital. The division of labor is similar to that in the first semester.
+                                    I will be responsible for the main program, logic and implementation mechanism.
+                                </p>
+                                <p>
+                                    In terms of mechanic implementation, many things can be used in the first level, such as maps, packs, energy.
+                                    In this level, I need to complete the energy system and optimize some functions of the first level.
+                                    I want to be different from the first level.
+                                </p>
+                                <!-- <p><img class="img-circle" src="img/avatar.jpg" height="50px" width="50px"> - <i>Alex Webber.</i></p>-->
+                            </div>
+                            <!-- /accordion-inner -->
+                        </div>
+                        <!-- /collapse -->
+                    </div>
+
+                    <br>
+                    <!-- Thoughts of the Research Question -->
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="GameBlog.html#collapseTwo" aria-expanded="false">
+                                <date>Feb 03, 2022</date>
+                                <plus> + </plus> Thoughts of the Research Question
+                            </a>
+                        </div>
+                        <div id="collapseTwo" class="accordion-body collapse" aria-expanded="false">
+                            <div class="accordion-inner">
+                                <p>
+                                    <br>
+                                    Before designing the game mechanics,
+                                    I first thought about what I wanted to continue to discuss and research in this game.
+                                    In the first level, I mainly explored how to design the right mechanics in such a game.
+                                    At this level, I want to go deeper, how much does the design of the mechanics affect the game, and how does it affect the main character?
+                                    How much does it affect the player's experience?
+                                </p>
+                                <p>
+                                    In addition, I learned the term immersion for the first time last semester, but many students, including me, were advised that immersion was not specific enough.
+                                    So this time I want to understand what immersion is and how to improve the player's experience. Also, does the game have to deliver something? Most of the time, games are just a tool for people's entertainment, but the more I learn about them, the more I realize that games have a lot of functions and value.
+                                </p>
+                            </div>
+                            <!-- /accordion-inner -->
+                        </div>
+                        <!-- /collapse -->
+                    </div>
+
+                    <br>
+                    <!-- Scene Design -->
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="GameBlog.html#collapseThree" aria-expanded="false">
+                                <date>Feb 04, 2022</date>
+                                <plus> + </plus> Scene Design
+                            </a>
+                        </div>
+                        <div id="collapseThree" class="accordion-body collapse" aria-expanded="false">
+                            <div class="accordion-inner">
+                                <p>
+                                    <br>
+                                    First, the design and construction of the scene. Due to time constraints, we still used existing material for the scenes.
+                                    Today, I looked for the scene materials of the second level with my friends.
+                                    An official resource pack for Unreal Engine was found, but UE was not installed.
+                                    So I went to install UE and try to check the required hospital scene materials.
+                                </p>
+                                <br>
+                                <img style="text-align: center ;height:auto; max-width: 80%;" src="img/gamedesign/pic0204.png">
+
+                            </div>
+                            <!-- /accordion-inner -->
+                        </div>
+                        <!-- /collapse -->
+                    </div>
+
+                    <br>
+                    <!-- Scene Construction -->
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="GameBlog.html#collapseFour" aria-expanded="false">
+                                <date>Feb 07, 2022</date>
+                                <plus> + </plus> Scene Construction
+                            </a>
+                        </div>
+                        <div id="collapseFour" class="accordion-body collapse" aria-expanded="false">
+                            <div class="accordion-inner">
+                                <br>
+                                <p>
+                                    Today, I imported the scene into UE and found that all the material formats were in UE format, which could not be used directly.
+                                    I preliminarily understood the operation mode of UE and exported the model,
+                                    but there was no material for the FBX model. Then,
+                                    I had to export each part individually and fill each material one by one in Unity. In addition,
+                                    I learned some specific details of URP material in Unity,
+                                    learned the meaning of exported “_AO”(ambient occlusion), “_R”(roughness), “_M”(metallic) and
+                                    other texture formats, which could be fille into  corresponding part of the URP material.
+                                    I really learned something new. I was actually a bit confused about the material before.
+                                </p>
+                                <br>
+                                <img style="text-align: center ;height:auto; max-width: 100%;" src="img/gamedesign/pic0207.png">
+                            </div>
+                            <!-- /accordion-inner -->
+                        </div>
+                        <!-- /collapse -->
+                    </div>
+
+                    <br>
+                    <!-- Scene Optimization -->
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="GameBlog.html#collapseFive" aria-expanded="false">
+                                <date>Feb 10, 2022</date>
+                                <plus> + </plus> Scene Optimization
+                            </a>
+                        </div>
+                        <div id="collapseFive" class="accordion-body collapse" aria-expanded="false">
+                            <div class="accordion-inner">
+                                <br>
+                                <p>
+                                    Today, we optimized the scene. Zhenyu added the hall of the hospital, AND I adjusted the material,
+                                    lighting, post-processing, etc.The initial scenario is established.
+                                </p>
+                                <br>
+                                <img style="text-align: center ;height:auto; max-width: 100%;" src="img/gamedesign/pic0210.png">
+                            </div>
+                            <!-- /accordion-inner -->
+                        </div>
+                        <!-- /collapse -->
+                    </div>
+                    <br>
+                    <!-- Properties Transfer -->
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="GameBlog.html#collapseSix" aria-expanded="false">
+                                <date>Feb 13, 2022</date>
+                                <plus> + </plus> Properties Transfer
+                            </a>
+                        </div>
+                        <div id="collapseSix" class="accordion-body collapse" aria-expanded="false">
+                            <div class="accordion-inner">
+                                <br>
+                                <p>
+                                    Today, I moved the main character to the game scene, as well as the UI.
+                                    I found some difficulties in the code, because although the reuse of the code was considered in the first level,
+                                    some temporary added codes could not be used due to the lack of consideration in the production,
+                                    so it may take some time to modify or rewrite some codes in the second level development.
+                                </p>
+
+                                <p>
+                                    Specifically, in the backpack system made in the first level,
+                                    some items are judged by tag and some by name,
+                                    resulting in some inconsistent codes.
+                                    At the same time, the code reuse of specific items in the first level is not high,
+                                    which is the result of the lack of design in the early stage.
+                                </p>
+                                <div class="accordion-innerHeading">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#collapseSix" href="GameBlog.html#codeSix">
+                                        <plus> + </plus>Code of Collectin Objects
+                                    </a>
+                                </div>
+                                <div id="codeSix" class="accordion-body collapse">
+                                    <div class="accordion-innerHeading">
+                                        <coding>
+                                            <br>
+                                            The scripts controlling the Bag system mainly concerns
+                                            <br>
+                                            <cs>NarrativeTrigger.cs</cs> and <cs>BackpackControl.cs</cs>
+                                            <br>
+                                            Firstly I set tags for different props
+                                            <br>
+                                            For example:
+                                            <br>
+                                            <br>
+                                        </coding>
+                                        <pre><annotation>    //refers to the computer UI panel</annotation>
+    m_ComputerTag = "computer";
+<annotation>    //refers to the log objects in the scene</annotation>
+    m_PropTag = "Props";
+<annotation>    //refers to the cabinet which could be open</annotation>
+    m_WallCabinetTag = "wallcabinet";
+
+    .......
+</pre>
+                                        <coding>
+                                            Obviously, objets will be detected by method <function>OnTriggerEnter()</function>.
+                                            To generalize the coding, I set variables (private Gameobject) for all the triggered objects.
+                                            In this way, everytime the player triggers an object,it will be recorded in <cs>NarrativeTrigger.cs</cs>
+                                            <br>
+                                            The input of Keycode.F is the interacting key, which almost controlls all the interactions.
+                                            With triggered objects and interacting input, it goes to the function <function>InteractObjects()</function>.
+                                            <br>
+                                            Here is the important part. With the logic above, I could add more certain functions tageting different objects;
+                                            More importantly, besides the backpack system, I also wrote other reusable functions. Actually, this behaviour is required.
+                                            <br>
+                                            For example:
+                                            <br> <br>
+                                        </coding>
+<pre><function>    InteractObjects()</function>
+    {
+<annotation>    //functions of level 1</annotation>
+    if (m_Log)
+    GetLogIntoBag();
+    if (m_WallCabinet)
+    OpenOrCloseCabinet();
+    if (m_ComputerPanel)
+    OpenComputer();
+<annotation>    //functions of level 2</annotation>
+    if (m_Fashengqi ||m_Core)
+    GetPartsIntoBag();
+    if (m_Flyr)
+    SupplyEnergy();
+    if (m_PasswordPadPanel)
+    OpenPasswordPad();
+    if (metalDoor&amp;&amp;!buttonPart)
+    OperateMetalDoor();
+    if (buttonPart)
+    GetButtonIntoBag();
+    if (m_Energy)
+    GetEnergy();
+    }
+</pre>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /accordion-inner -->
+                        </div>
+                        <!-- /collapse -->
+                    </div>
+                    <br>
+                    <!-- Confirm the Research Question-->
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="GameBlog.html#collapseSeven" aria-expanded="false">
+                                <date>Feb 20, 2022</date>
+                                <plus> + </plus> Confirm the Research Question
+                            </a>
+                        </div>
+                        <!-- /accordion-heading -->
+                        <div id="collapseSeven" class="accordion-body collapse" aria-expanded="false">
+                            <br>
+                            <div class="accordion-inner">
+                                <p>
+                                    After a few days of on-off modifications, the main features were mostly ported to the level 2 scene.
+                                    With the preparation work completed, the next step is to set up the mechanism and consider the research problem.
+                                    When making the first level, I paid more attention to the design of the mechanics,
+                                    and actually I didn't think about the overall feeling of the game as a player.
+                                    When I settled down to play the game, carefully read the log and listened to every robot voice,
+                                    I felt I was truly immersed in the story and explored as Iron.
+                                </p>
+                                <p>
+                                    I started to think about the expressiveness of the game,
+                                    whether we were communicating our ideas to the players.
+                                    As an RPG, the game doesn't actually have the traditional RPG features,
+                                    but is more about deciphering and exploration. So what is the progression of the game?
+                                    So, I read about it and wanted to know the elements of an RPG.
+                                    A basic definition of an RPG is usually a description of agency and experience.
+                                    One of the things I was impressed profoundly is that <i><a href="https://nordiclarp.org/w/images/7/74/2006-Role.Play.Art.pdf">Petterson (2006) </a></i>calling RPGS art of Experience.
+                                    In terms of giving the player a game experience,
+                                    it is worth pondering whether the level of esthetics can be achieved.
+                                </p>
+                                <p>
+                                    Once by chance, I saw an article about <i><a href="https://pavcreations.com/level-systems-and-character-growth-in-rpg-games/">Level system and character growth in RPG games</a></i>,
+                                    and the author gave a relatively accurate growth curve by referring to bloodo mathematical formula,
+                                    which inspired me to explore the growth of characters.
+                                    But there was a conflict point where I saw that our characters were not
+                                    the traditional RPG human protagonists, so where did we grow? And that got me thinking.
+                                    I found that growth is not just about upgrading and strengthening abilities,
+                                    but also about the improvement and further shaping of character image, which is a gradual process.
+                                </p>
+                                <p>
+                                    Consequently, I wanted to ask the question, is there a difference between non-human RPGs and others?
+                                    Are these games more about delivering fun or are they usually
+                                    about delivering the unique meaning of the main character?
+                                </p>
+                                <p>
+                                    Overall, What makes an RPG Game with a Non-human Protagonist Distinct?
+                                </p>
+                                <!-- <p><img class="img-circle" src="img/avatar.jpg" height="50px" width="50px"> - <i>Alex Webber.</i></p>-->
+                            </div>
+                            <!-- /accordion-inner -->
+                        </div>
+                        <!-- /collapse -->
+                    </div>
+
+                    <br>
+                    <!-- Group Discussion and Gameplay Design-->
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="GameBlog.html#collapse8" aria-expanded="false">
+                                <date>Feb 22 2022</date>
+                                <plus> + </plus> Group Discussion and Gameplay Design
+                            </a>
+                        </div>
+                        <div id="collapse8" class="accordion-body collapse" aria-expanded="false">
+                            <div class="accordion-inner">
+                                <br>
+                                <p>
+                                    Our group further discussed the mechanism of the second level of the game,
+                                    and determined the basic gameplay and main mechanism of our game.
+                                    In addition, we refered to the game atmosphere and puzzling of Resident Evil Ⅱ.
+                                </p>
+                                <p>
+                                    The first is to design a mechanic for Iron's repair and care robot,
+                                    which is still about finding parts, but requires the player to operate the operating table in the scene.
+                                    And then again, energy harvesting, which is the core of our game.
+                                </p>
+                                <br>
+                                <img style="text-align: center ;height:auto; max-width: 80%;" src="img/gamedesign/pic0222.png">
+                            </div>
+                            <!-- /accordion-inner -->
+                        </div>
+                        <!-- /collapse -->
+                    </div>
+                    <br>
+
+                    <!-- Character Progression-->
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="GameBlog.html#collapse9" aria-expanded="false">
+                                <date>Feb 25 2022</date>
+                                <plus> + </plus> Character Progression
+                            </a>
+                        </div>
+                        <div id="collapse9" class="accordion-body collapse" aria-expanded="false">
+                            <div class="accordion-inner">
+                                <br>
+                                <p>
+                                    After the group discussion about mechanics,
+                                    I suddenly got inspired on my research question.
+                                    RPGS have a progression system, so in characters,
+                                    which is called <i>Character Progression</i>.
+                                    But in practice, few researchers have researched into this filed.
+                                    The word <i>Character Progression</i> may first be proposed by <a href="https://lonewarriorswa.com/wp-content/uploads/2018/05/Playing-at-the-World-book.pdf">Peterson (2012) </a>
+                                    in his discussion of <i>Dungeons &amp; Dragons</i> mechanism.
+                                </p>
+                                <p>
+                                    Intruingly, "much of the literature on role-playing games (RPGs) focuses on their social, performative, experiential, and/or narrative aspects.
+                                    The emphasis is on the playing of the roles, as it were, and less so on the game mechanics.
+                                    Curiously, the phrase RPG elements tends not to refer to the role-playing aspects of the genre,
+                                    but to the rules, systems, and mechanisms that have been co-opted by other game genres and gamification practitioners."
+                                    By examining a single element: mechanisms and systems for <i><a href="https://my.eng.utah.edu/~zagal/Papers/Zagal_Altizer_RPG_Elements_Progression.pdf">Character Progression</a></i> in RPGs we can unpack the term ‘RPG elements’.
+
+                                </p>
+                                <p>
+                                    This further inspired me to think about the research problem.
+                                    The core of the question is not the genre, but what it carries.
+                                </p>
+                                <br>
+                            </div>
+                            <!-- /accordion-inner -->
+                        </div>
+                        <!-- /collapse -->
+                    </div>
+
+                    <br>
+                    <!-- Energy System -->
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="GameBlog.html#collapse10" aria-expanded="false">
+                                <date>Feb 27, 2022</date>
+                                <plus> + </plus> Energy System
+                            </a>
+                        </div>
+                        <div id="collapse10" class="accordion-body collapse" aria-expanded="false">
+                            <div class="accordion-inner">
+                                <br>
+                                <p>
+                                    The character progression attribute is represented by Iron, and one of the systems is the energy system.
+                                    The player can gain energy by accomplishing missions and passing the level while risking death if losing it.
+                                    This is a rewarding and punishment mechanic that drives the player to complete the quest.
+                                </p>
+
+                                <p>
+                                    In this level, I implemented the specific common function of energy.
+                                </p>
+                                <img style="text-align: center ;height:auto; width: 80%;" src="img/gamedesign/pic0227.png">
+                                <br><br><p style="text-align:center;font-size:20px">
+                                    Figure 1: UI of Energy
+                                </p>
+                                <img style="text-align: center; height: auto; width: 80%;" src="img/gamedesign/pic0227_1.png">
+                                <br><br><p style="text-align:center;font-size:20px">
+                                    Figure 2: the color changes with the units of energy
+                                </p>
+                                <img style="text-align: center; height: auto; width: 80%;" src="img/gamedesign/FlashEnergyBar.gif">
+                                <br><br><p style="text-align:center;font-size:20px">
+                                    Figure 3: the bar flashes with little energy
+                                </p>
+                                <div class="accordion-innerHeading">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#collapse10" href="GameBlog.html#code10">
+                                        <plus> + </plus>Code of Energy System
+                                    </a>
+                                </div>
+                                <div id="code10" class="accordion-body collapse">
+                                    <div class="accordion-innerHeading">
+                                        <br>
+                                        <coding>
+                                            The script is <cs>Energy.cs</cs>
+                                            Firstly, energy decreases by time, which can be simply achieved by <function>IEnumerator</function>
+                                            <br>
+                                            <br>
+                                        </coding>
+<pre><function>  IEnumerator CountDownBloodLosing()</function>
+    {
+        while(true)
+        {
+             yield return new WaitForSeconds(m_LosingTime);
+<function>          LoseEnergy();</function>
+        }
+    }
+</pre>
+                                        <br>
+
+                                        <coding>
+                                            As Figure 1 shown, On the energy display,
+                                            I made it by instantiating twenty units of energy,
+                                            which is a very basic implementation method that I'll go over here.
+                                            On the UI, the energy color changes depending on the amount of energy,
+                                            and a flash alerts the player when energy is too little.
+                                            <div class="about">
+                                                <img style="height: 50%; width: 40%;" src="img/gamedesign/colorfadecs.png">
+                                            </div>
+                                            <br>
+                                            Bellow is the script, <cs>ColorFade.cs</cs>, which makes ther energy fade-in and fade-out.
+                                            I also used this script in other functions several times.
+                                            Likewise, IEnumerator is used in this script to make this effect.
+                                            <br><br>
+                                        </coding>
+<pre><function>  IEnumerator OnFading()</function>
+    {
+        switch m_FadeType
+        while(time&lt;fadetime))
+        {
+            image.color.dofade(fadedcolor)
+        }
+        reset time;
+        while(time&lt;fadetime))
+        {
+            image.color.dofade(normalcolor)
+        }
+    }
+</pre>
+                                        <coding>
+                                            Notes: Using <a href="http://dotween.demigiant.com/">DOTween</a> is easier to make things zoom in and zoom out or fade in and fade out.
+                                            <br>
+                                            The example could be:
+                                            <br><br>
+<pre>    Using DG.Tweening;
+    ...
+    Class Name:
+    {
+        image.DOfade(endvalue,time);
+    }   
+</pre>
+
+                                        </coding>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /accordion-inner -->
+                        </div>
+                        <!-- /collapse -->
+                    </div>
+                    <br>
+                    <!-- Enable Players to Choose -->
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="GameBlog.html#collapse11" aria-expanded="false">
+                                <date>Mar 01, 2022</date>
+                                <plus> + </plus> Enable Players to Choose
+                            </a>
+                        </div>
+                        <div id="collapse11" class="accordion-body collapse" aria-expanded="false">
+                            <div class="accordion-inner">
+                                <br>
+                                <p>
+                                    The way our mechanics were set up, not only did energy decrease over time,
+                                    but some interactions in the game also caused energy to decrease.
+                                    When I was thinking about how to present this mechanic,
+                                    I realized that some seemingly meaningless mechanics could actually exist in the game,
+                                    such as making the player make choices.
+                                    <br>
+                                    <br>
+                                    <i>
+
+                                        "Inconsequential choices that do not notably affect the game result should be meaningful
+                                        because choices provide a sense  of agency to the player."
+                                        <a href="https://www.researchgate.net/profile/Jose-Zagal/publication/319370603_Meaning_without_consequence_virtue_ethics_and_inconsequential_choices_in_games/links/5a7dcab4a6fdcc1d3e7fd13d/Meaning-without-consequence-virtue-ethics-and-inconsequential-choices-in-games.pdf">
+                                            (Nay &amp; Zagal, 2017).
+                                        </a>
+                                    </i>
+                                    <br>
+                                    <br>
+                                    Such a view is quite unique. For most people, there are choices in games that lead to victory.
+                                    <br>
+                                    <br>
+                                    <i>
+                                        "Winning is a desirable action,  whereas losing may lead to an increase in unpleasant emotional states."
+                                        <a href="https://www.sciencedirect.com/science/article/pii/S0747563219301773?casa_token=PeGgGs4Rg24AAAAA:YFPzs5_9ed3ucvWGivSXdabizfn5FHAmDt9FX-gG47GAGQkzc5z1qTJrtGhUW04ikRsxK45WQA">
+                                            (Dowsett &amp; Jackson, 2019).
+                                        </a>
+                                    </i>
+                                    <br>
+                                    <br>
+                                    However, when we re-consider the meaning of the game, we find that many things that have nothing to do with winning,
+                                    such as the Easter eggs, hidden details, etc., are often the fun part of the player's experience.
+                                    And just as it's more dignified to write about it in a euphemistic way,
+                                    games that improve the plot with hard-to-find details, or challenge the mood of the player,
+                                    make for a great experience.
+                                </p>
+                            </div>
+                            <!-- /accordion-inner -->
+                        </div>
+                        <!-- /collapse -->
+                    </div>
+                    <br>
+                    <!-- Eudaimonic Game Experiences -->
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="GameBlog.html#collapse12" aria-expanded="false">
+                                <date>Mar 03, 2022</date>
+                                <plus> + </plus> Eudaimonic Game Experiences
+                            </a>
+                        </div>
+                        <div id="collapse12" class="accordion-body collapse" aria-expanded="false">
+                            <div class="accordion-inner">
+                                <br>
+                                <p>
+                                    After reading through a lot of theories,
+                                    I got to understand for the first time the widespread use of the word Eudaimonia in the field of games
+                                    and how it is often used to evaluate a game. Games serve for the player,
+                                    so creating experiences is a must, and there seems to be no limit to the level of experience,
+                                    as if happiness will never peak, and games can continue to create more and more Eudaimonic experiences.
+                                    <br>
+                                    <br>
+                                    Eudaimonia incorporates four broad conceptual patterns
+                                    <i>
+                                        <a href="file:///D:/Desktop/homework/Game%20Design/MaC%209(2)%20-%20The%20&#39;Eudaimonic%20Experience&#39;_%20A%20Scoping%20Review%20of%20the%20Concept%20in%20Digital%20Games%20Research.pdf">
+                                            (Daneels et at., 2021)
+                                        </a>
+                                        :
+                                        <br>(1) appreciation as an overarching (yet imprecise) eudaimonic outcome of playing digital games;
+                                        <br>(2) covariation among meaningful, emotionally moving/challenging, and self-reflective experiences;
+                                        <br> (3) the unique potential of digital games to afford eudaimonic social connectedness; and
+                                        <br> (4) other eudaimonia-related concepts (e.g., nostalgia, well-being, elevation)
+                                    </i>
+
+                                    <br>
+                                    <br>
+                                    What experiences can we create for our players with regard to our games?
+                                    First of all, as a player, I think it's easy for players to empathize with Iron from the first level.
+                                    In order to strengthen this connection, we need to add more elements to support it in the second level.
+                                </p>
+                            </div>
+                            <!-- /accordion-inner -->
+                        </div>
+                        <!-- /collapse -->
+                    </div>
+                    <br>
+                    <!-- Consume Energy By Opening Doorss -->
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="GameBlog.html#collapse13" aria-expanded="false">
+                                <date>Mar 07, 2022</date>
+                                <plus> + </plus> Consume Energy By Opening Doorss
+                            </a>
+                        </div>
+                        <div id="collapse13" class="accordion-body collapse" aria-expanded="false">
+                            <div class="accordion-inner">
+                                <br>
+                                <p>
+                                    According to our mechanics, energy, in addition to decreasing over time, can also be used to participate in interactions within the scene. But as mentioned earlier, we want to give the player choices, and avoid choices that tend to win. And that's actually what I did.
+                                </p>
+
+                                <p>
+                                    Every single room in the scene has a door, and each time the player opens the door, energy is consumed. However, having a room in it actually has no effect on the progress of the game. Such an empty space exists in most games, and it gives the player some space to explore (Figure 2). So, after entering an unhelpful room, the player might think twice before using energy to open the door.
+                                </p>
+                                <p>
+                                    In addition, In the design of opening the door, I also made a mechanism that gradually charged the door and then opened it. In such details, the game's progression system can be solid, with energy-deficient doors slowly opening only after they are fully charged. This is not only a interesting mechanic, but also a way to suppress the desire of some players to finish the game and make them feel more relaxed.
+                                </p>
+                                <img style="text-align: center ;height:auto; width: 80%;" src="img/gamedesign/OpenDoor.gif">
+                                <br><br> <p style="text-align:center;font-size:20px">
+                                    Figure 1: uses energy to charge the door and open it
+                                </p>
+                                <img style="text-align: center; height: auto; width: 80%;" src="img/gamedesign/emptyrooms.png">
+                                <br><br><p style="text-align:center;font-size:20px">
+                                    Figure 2: empty rooms where the player could only explore
+                                </p>
+
+                                <div class="accordion-innerHeading">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#collapse13" href="GameBlog.html#code13">
+                                        <plus> + </plus>Code of Opening Door
+                                    </a>
+                                </div>
+                                <div id="code13" class="accordion-body collapse">
+                                    <div class="accordion-innerHeading">
+                                        <br>
+                                        <coding>
+                                            Using the universal function of interacting, <function>InteractObjects()</function>, It is not difficult to
+                                            realize the open of doors.
+                                            <br>
+                                            The exlusive script, <cs>ActiveDoor.cs</cs> realizes zooming in of opening door.
+                                            <br>
+                                            Before that, we should create a new shader to implement the demonstrated effect (Figure 1).
+                                            <br>
+                                        </coding>
+                                        <div class="about">
+                                            <img style="height: 80%; width: 80%;" src="img/gamedesign/door_effects_shader.png">
+                                            <br><br><p style="text-align:center;font-size:20px">
+                                                Figure 3: the shader graph of the door
+                                            </p>
+                                            <img style="height: 80%; width: 80%;" src="img/gamedesign/door_effects_shader_detail.png">
+                                            <br><br><p style="text-align:center;font-size:20px">
+                                                Figure 4: the main logic of the shader
+                                            </p>
+                                        </div>
+                                        <p>
+                                            As shown in Figure 3 and4, to implement the effect that the emission fades out from the center,
+                                            I mainly add an offset variable to the x axis of the emission picture.
+                                            The reason for the x axis is based on the appearance of the door that the energy slots are distributed on the top center and the bottom center.
+                                        </p>
+                                        <p>
+                                            After making the shader, there is a vital step that I have never met since it is only a short time for me to learn shaders.
+                                        </p>
+                                        <div class="about">
+                                            <img style="height: 50%; width: 40%;" src="img/gamedesign/activedoorcs.png">
+                                        </div>
+                                        <br>
+                                        <coding>
+                                            Bellow is the functions in <cs>ActiveDoor.cs:</cs>, and the fading effect also used <function>IEnumerator</function>
+                                            <br>
+                                            <br>
+                                        </coding>
+                                        <pre><function>  FillSlots()</function>
+    {
+        ...
+<annotation>        //Very important to enablekeword, which I didnt know and spent a lot time on it.</annotation>
+        m_GlassDoorEmission.EnableKeyword("_EMISSION");
+        m_GlassDoorEmission.SetFloat("_Fill", 0);
+        m_GlassDoorEmission.SetColor("_EnergyColor",Color.black);
+        ...
+    }
+<function>  OpenDoor()</function>
+    {
+        ...
+<annotation>        //Here I using DOTween method which is very useful.</annotation>
+        transform.DOLocalMoveX(moveToPosX, time);
+        ...
+    }
+</pre>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /accordion-inner -->
+                        </div>
+                        <!-- /collapse -->
+                    </div>
+                    <br>
+
+                    <!-- Consume Energy By Opening Doorss -->
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="GameBlog.html#collapse14" aria-expanded="false">
+                                <date>Mar 14, 2022</date>
+                                <plus> + </plus> Prompting Tips
+                            </a>
+                        </div>
+                        <div id="collapse14" class="accordion-body collapse" aria-expanded="false">
+                            <div class="accordion-inner">
+                                <br>
+                                <p>
+                                    There needs to be some freedom in the player's exploration, but at the same time the game should be guided so that the player doesn't lose passively. In order to prevent the player from being confused and unable to play the game smoothly due to wandering around using energy at random, I introduced a quest prompt system.
+                                </p>
+
+                                <p>
+                                    The quest system is something that most games have, especially if they have a story. I designed the mission system in places that required the player to do different things. It is very important for the content design to be vague and prompt, allowing the player to follow certain game logic while having freedom.
+                                </p>
+                                <p>
+                                    The appearance and dynamic effect of the mission system are based on the task prompt effect in Need for Speed 18 (Figure 1), which is displayed in the right middle of the interface in translucent gradient color, which not only prompts the mission, but also is very beautiful.
+                                </p>
+                                <img style="text-align: center ;height:auto; width: 80%;" src="img/gamedesign/missionTipinNeedofSpeed.png">
+                                <br><br> <p style="text-align:center;font-size:20px">
+                                    Figure 1: the Interface of Need of Speed 18, with the mission tips on the right side.
+                                </p>
+                                <img style="text-align: center; height: auto; width: 80%;" src="img/gamedesign/missionTip.gif">
+                                <br><br><p style="text-align:center;font-size:20px">
+                                    Figure 2: the Animation of the Prompting tips
+                                </p>
+
+                                <div class="accordion-innerHeading">
+                                    <a class="accordion-toggle" data-toggle="collapse" data-parent="#collapse14" href="GameBlog.html#code14">
+                                        <plus> + </plus>Code of Plot Triggers
+                                    </a>
+                                </div>
+                                <div id="code14" class="accordion-body collapse">
+                                    <div class="accordion-innerHeading">
+                                        <br>
+                                        <coding>
+                                            The code part of the mission system is where the logic is most needed, and failing to put the story together runs the risk of repeating the same mistakes. Therefore, I divided the story into simple classes, and used a unified format to wrap each story point with functions, which is more logical.
+                                            <br>
+                                            <br>
+                                            With the level controller,<cs> SecondLevelController.cs</cs>, I I put all the mechanics together in this code.
+                                            <br>
+                                            As Figure 3 illustrates, I set many triggers called "PlotTrigger" to help me record the current progress.
+                                            <br>
+                                            <br>
+                                        </coding>
+                                        <div class="about">
+                                            <img style="height: 80%; width: 80%;" src="img/gamedesign/plottrigger.png">
+                                            <br><br><p style="text-align:center;font-size:20px">
+                                                Figure 3: the Triggers in the Hierarchy
+                                            </p>
+                                        </div>
+                                        <pre><cs>  SecondLevelController.cs</cs>
+    # Character Control
+    # Level Control
+    # Door Control
+    # Cell Control
+    # NursingRobot Control
+    # Environment Control
+</pre>
+                                        <p>
+                                            As shown above, this script comprises almost all the mechanics of this level. Here I want to mainly introduce the logic of Level Control
+                                        </p>
+                                        <pre><function>    PlotTriggerd()</function>
+    {
+        switch Plot
+                1    <function>Plot01()</function><annotation>// enter the hall</annotation>
+                2    <function>Plot02()</function><annotation>// meet the nursing robot</annotation>
+                3    <function>Plot03()</function><annotation>// chat with the nursing robot</annotation>
+                4    <function>Plot04()</function><annotation>// on the path to the room with cells</annotation>
+                5    <function>Plot05()</function><annotation>// enter the room with cells</annotation>
+                6    <function>Plot06()</function><annotation>// found the two parts and then talk with the robot</annotation>
+                7    <function>Plot07()</function><annotation>// go to fix the robot</annotation>
+                8    <function>Plot08()</function><annotation>// successfully fixed the robot</annotation>
+                9    <function>Plot09()</function><annotation>// talk with fixed robot</annotation>
+               10   <function>Plot10()</function><annotation>// collected two parts of the keypad</annotation>
+               11   <function>Plot11()</function><annotation>// collect the energy</annotation>
+    }
+</pre>
+                                        <br>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- /accordion-inner -->
+                        </div>
+                        <!-- /collapse -->
+                    </div>
+                    <br>
+
+                    <!-- Cutscene-->
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="GameBlog.html#collapse15" aria-expanded="false">
+                                <date>Mar 18, 2022</date>
+                                <plus> + </plus> Cutscene
+                            </a>
+                        </div>
+                        <div id="collapse15" class="accordion-body collapse" aria-expanded="false">
+                            <div class="accordion-inner">
+                                <br>
+                                <p>
+                                    In order to facilitate the progress of the game, I added cutscenes to guide the player, mainly when they meet the nurse robot. In fact, taking such a shot animation is the best way to show the plot. Because if you let the player walk up to the NPC and choose whether or not to talk to the NPC, that's a little too much freedom.
+                                </p>
+                                <img style="text-align: center ;height:auto; max-width: 80%;" src="img/gamedesign/cutscene.gif">
+                                <br><br> <p style="text-align:center;font-size:20px">
+                                    Figure 1: the cutscene when Iron encounters the damaged nursing robot
+                                </p>
+                                <br>
+                            </div>
+                            <!-- /accordion-inner -->
+                        </div>
+                        <!-- /collapse -->
+                    </div>
+                    <br>
+
+                    <!-- Surroundings and atmosphere-->
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="GameBlog.html#collapse16" aria-expanded="false">
+                                <date>Mar 24, 2022</date>
+                                <plus> + </plus> Surroundings and atmosphere
+                            </a>
+                        </div>
+                        <div id="collapse16" class="accordion-body collapse" aria-expanded="false">
+                            <div class="accordion-inner">
+                                <br>
+                                <p>
+                                    Creating an atmosphere is essential to enhance the player's experience.
+                                    When people focus on a game's mechanics, they tend to focus on its sound, scenery, and graphics.
+                                    While some non-essential elements, such as graphics quality, are not the same as game quality,
+                                    they play a big role in creating a game experience.
+                                </p>
+                                <p>
+                                    The term mmersion can be devided into three stages: <i>Engagement, Engrossment and Total Immersion</i>
+                                    <i>
+                                        <a href="https://web.archive.org/web/20081031214828id_/http://www.users.cs.york.ac.uk/~pcairns/papers/Immersion.pdf">(Brown &amp; Claims, 2004) </a>
+                                    </i>
+                                    By dividing immersion, the paper suggests that manipulating interfaces for Empathy and Atmosphere is attributable to create immersion in games.
+                                </p>
+                                <p>
+                                    However,
+                                    <i>
+                                        "Lacking connection to real life sometimes go against player’s eudaimonic experience."
+                                        <a href="https://www.tandfonline.com/doi/pdf/10.1080/17482798.2020.1727934?casa_token=AJh4BtTP67cAAAAA:a24VO_9I1xwJ8H1J9R1Ano1L3y7Jif2YBtQR37X5kXVHMEH1KbnfWLZw3PQYUlBdfrrMo4YwmwdG">
+                                            (Daneels, Vandebosch &amp; Walrave, 2020)
+                                        </a>
+                                    </i>.
+                                    Our game character as a robot lacks social connectedness with a human. So I did a lot of work on surroundings and atmosphere in this regard.
+                                </p>
+                                <p>
+                                    First of all, the environment atmosphere is created. As the setting is the abandoned future human world, the hospital has been abandoned.
+                                    So I designed to add some other robots in the hospital, and they are running out of energy or about to run out:
+                                </p>
+                                <p style="font-size:18px; color: dimgray">
+                                    ● When entering the game, the player will encounter zombie robots, who are dead but still have little energy.
+                                    As the player approaches, they will pounce on Iron. We have not set whether it is for help or other purposes,
+                                    so that the player can understand it from his own perspective (Figure 1).
+                                </p>
+                                <p style="font-size:18px; color: dimgray">
+                                    ● Before the player enters the morgue, there is a black fog effect, and we want to remind the player that something different is coming (Figure 2).
+                                </p>
+                                <p style="font-size:18px; color: dimgray">
+                                    ● The moment the player open the door to the morgue through the dark fog, he or she will be greeted by a swarm of flying insects, in keeping with the idea that some abandoned dark scenes are always full of strange creatures (Figure 3).
+                                </p>
+                                <p style="font-size:18px; color: dimgray">
+                                    ● We have arranged different environmental sound effects in different scenes. There will be wind in passages and halls, and the wind will be more violent in narrow passages.
+                                    The most special setting is the sound of electrocardiogram monitors in the operating room, creating a hospital atmosphere (Figure 4).
+                                </p>
+
+                                <img style="text-align: center ;height:auto; max-width: 80%;" src="img/gamedesign/crawl.gif">
+                                <br><br> <p style="text-align:center;font-size:20px">
+                                    Figure 1: zimbie robots crawling towards Iron
+                                </p>
+                                <img style="text-align: center ;height:auto; max-width: 80%;" src="img/gamedesign/fog.gif">
+                                <br><br> <p style="text-align:center;font-size:20px">
+                                    Figure 2: a black fog emerges
+                                </p>
+                                <img style="text-align: center ;height:auto; max-width: 80%;" src="img/gamedesign/flyers.gif">
+                                <br><br> <p style="text-align:center;font-size:20px">
+                                    Figure 3: a swarm of flyers come forth
+                                </p>
+                                <img style="text-align: center ;height:auto; max-width: 80%;" src="img/gamedesign/differentscenes.png">
+
+
+                                <br>  <br>
+                                <div class="buttons">
+
+                                    <audio id="wind" src="music/wind.mp3" loop=""></audio>
+                                    <button onclick="play(&#39;wind&#39;)" alt="user" style="color: black; margin-right: 20%;margin-left:1% ">
+                                        Corridor
+                                    </button>
+
+                                    <audio id="surgeryroom" src="music/surgicalroom.mp3" loop=""></audio>
+                                    <button onclick="play(&#39;surgeryroom&#39;)" alt="user" style="color: black;  margin-right: 20% ">
+                                        Surgical Room
+                                    </button>
+
+
+                                    <audio id="windhall" src="music/wind_hall.mp3" loop=""></audio>
+                                    <button onclick="play(&#39;windhall&#39;)" alt="user" style="color: black; margin-left: 1%; margin-right: 2% ">
+                                        Hall
+                                    </button>
+
+                                </div>
+                                <br> <p style="text-align:center;font-size:20px">
+                                    Figure 4: the different scenes with different background sounds
+                                </p>
+                                <div class="code">
+                                    <div class="accordion-innerHeading">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#collapse16" href="GameBlog.html#code16">
+                                            <plus> + </plus>Code of Zombie Robots, Flyers and Fog
+                                        </a>
+                                    </div>
+                                    <div id="code16" class="accordion-body collapse">
+                                        <div class="accordion-innerHeading">
+                                            <br>
+                                            <coding>
+                                                <p>
+                                                    I suggested the zombie robots and the logic was mainly implemented by Zhenyu Zhou. But we shared the same logic of implementing the AI of other characters.
+                                                </p>
+                                                <p>
+                                                    Specifically, in the past, I used <function>Update() </function>to use <cs>Nav Mesh Agent</cs>, which was the case in the first level and many other games I made.
+                                                    I learned from the turorials from masterclass.Specifically, it is Term 2 - Week 4 - Animation Controllers and Events - Navmesh AI pathfinding.
+                                                    In this section I learnt a new method of making AI. What's more, I learnt some coding that I didnt use before though I saw this but didnt try to approach.
+                                                </p>
+                                                <p>
+                                                    Below is the logic of the AI agent of the craling rorbot, which was similarly implemented on the flyers.
+                                                </p>
+                                            </coding>
+                                            <pre>public<function>   CrawlStatesEnum characterState</function>
+    {
+<annotation>    //Return the state of the private enum on a get request</annotation>
+<variable>      get</variable>{ return m_characterState; }
+<variable>      set</variable>
+        {
+            StopAllCoroutines();
+            m_characterState = value;
+            switch (m_characterState)
+            {
+                case CrawlStatesEnum.IDLE:
+                    StartCoroutine(<function>IdleCoRoutine()</function>);
+                    break;
+                case CrawlStatesEnum.FIND:
+                    StartCoroutine(<function>CrawlCoRoutine()</function>);
+                    break;
+                case CrawlStatesEnum.STOP:
+                    StartCoroutine(<function>StopCoRoutine()</function>);
+                    break;
+            }
+        }
+    }
+</pre>
+                                            <coding>
+
+                                                The <variable>get set</variable> accessor or modifier mostly used for storing and retrieving the value from the private field.
+
+                                                Through my practice, I got to know about
+                                                <i>
+                                                    <a href="https://www.completecsharptutorial.com/basic/get-set-method.php#:~:text=How%20to%20use%20get%20set%20modifier%20in%20C%23,used%20for%20storing%20the%20value%20in%20private%20variables.">
+                                                        Get Set Modifier in C#
+
+                                                    </a>
+                                                </i>
+                                                which is really useful. I think I can put this method into use in my future work.
+                                                <br>
+                                                <br>
+                                                Back to the implementation of the AI agent, it is oringinal for me to find it made by the <function>IEnumerator</function>.
+                                                I think I can use this method to make the controller for my protagonist in my future games.Plus, some other functions should be approached in this way.
+                                            </coding>
+                                            <br>
+                                            <coding>
+                                                Then the agent of the flyers is similar, they all need a destination to load.I predecided some positions where the flyers loaded,
+                                                which I think could be opimized by controlling the paths of flying by energy or time. In this way, I can enable the flyers to move everywhere randomly in the scene.
+                                                But this requires a more intelligent agency. Due to the limitated time I didnt try to realize it.
+                                                <br>
+                                                <br>
+                                                What's more, it is the fog that is also a new thing I havent utilized interms of making it dynamics in the game.
+
+                                                As shown in the screenshot below, it is by setting fogDemsity to simply control this. Actually, we can get access to these funtions easily by searching for the attributes online and checking the API.
+                                                Before I didnt make good use of the user API, but as I learnt much knowledge on this field, I could look through the API in a useful way.
+                                            </coding>
+                                            <div class="about">
+                                                <img style="height: 80%; width: 80%;" src="img/gamedesign/fogcontrol.png">
+                                            </div>
+                                            <br>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /code-->
+                            </div>
+                            <!-- /accordion-inner -->
+                        </div>
+                        <!-- /collapse -->
+                    </div>
+                    <br>
+
+                    <!-- Supplement of Energy-->
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="GameBlog.html#collapse17" aria-expanded="false">
+                                <date>Mar 30, 2022</date>
+                                <plus> + </plus> Supplyment of Energy
+                            </a>
+                        </div>
+                        <div id="collapse17" class="accordion-body collapse" aria-expanded="false">
+                            <div class="accordion-inner">
+                                <br>
+                                <p>
+                                    Halfway through the game, the room releases flying robots which run out their limited energy and
+                                    die in separate positions. The player can collect them thus supplying the energy.
+                                    It is possible to look at reward systems either as a way to motivate players or as a way to soften
+                                    the blow of disappointing outcomes
+                                    <i>
+                                        <a href="http://gamelearninglab.nctu.edu.tw/ctsun/10.1.1.221.4931.pdf">
+                                            (Wang &amp;Sun, 2011)
+                                        </a>
+                                    </i>
+                                    . Although the energy decreases constantly by time,
+                                    the player can continuously look for these flyers as rewards.
+                                    In this case, it is important for the player to make plans of choosing appropriate time to “digest” a flyer.
+                                </p>
+
+                                <p>
+                                    Yet, I do not name or define the way of collecting a flyer to add energy, whether by “killing”,
+                                    “extracting” or “collecting”. It's possible that meaningfulness and pleasure in entertainment
+                                    media exist on orthogonal scales. Hence, even if they could coexist, this connection and the intensity
+                                    levels that correlate to each of them might be different
+                                    <i>
+                                        <a href="https://psycnet.apa.org/record/2016-19756-006">
+                                            (Bartsch &amp; Oliver, 2017)
+                                        </a>
+                                    </i>
+                                    . This is an undefined mechanic for the player to decide morally and emotionally,
+                                    which avoid subjective meaningfulness that probably affects the game process.
+
+                                </p>
+                                <img style="text-align: center ;height:auto; max-width: 80%;" src="img/gamedesign/getflyer.png">
+                                <br><br> <p style="text-align:center;font-size:20px">
+                                    Figure 1: the flyer runs out energy and can be collected to supply energy
+                                </p>
+                                <br>
+                            </div>
+                            <!-- /accordion-inner -->
+                        </div>
+                        <!-- /collapse -->
+                    </div>
+                    <br>
+
+                    <!-- Surgery-->
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="GameBlog.html#collapse18" aria-expanded="false">
+                                <date>Apr 05, 2022</date>
+                                <plus> + </plus> Surgery
+                            </a>
+                        </div>
+                        <div id="collapse18" class="accordion-body collapse" aria-expanded="false">
+                            <div class="accordion-inner">
+                                <br>
+                                <p>
+                                    This level has unique mechanism, which Iron uses to run the surgical lights.
+                                    As shown in Figure 1, the joystick is located in the lower-right corner,
+                                    with the light choices located in the upper-middle section, near to the reset button.
+                                    Emotional and moral importance are entwined in the act of repairing and rescuing another robot.
+                                    What's more, I reckon that as a result of the game's unique light rotation concept, the player has a good time.
+                                </p>
+                                <p>
+                                    Iron may be found in a room that is separate from where the console is located, implying that the Iron is a doctor who is in charge of the devices.
+                                    Eudaimonic experience is generated by the appearance of personified behaviours in Iron, which indicate his character development.
+                                </p>
+                                <img style="text-align: center ;height:auto; max-width: 80%;" src="img/gamedesign/surgery.gif">
+                                <br><br> <p style="text-align:center;font-size:20px">
+                                    Figure 1: use the joystick to operate the lamps
+                                </p>
+                                <br>
+                                <div class="code">
+                                    <div class="accordion-innerHeading">
+                                        <a class="accordion-toggle" data-toggle="collapse" data-parent="#collapse18" href="GameBlog.html#code18">
+                                            <plus> + </plus>Code of Controlling the lamp
+                                        </a>
+                                    </div>
+                                    <div id="code18" class="accordion-body collapse">
+                                        <div class="accordion-innerHeading">
+                                            <br>
+                                            <coding>
+                                                <p>
+                                                    In making the operation mechanism, two main functions are achieved: the first is to confine the joystick to the direction range and separate the X axis from the Y axis.
+                                                    The second is to transfer the displacement of the joystick to the rotation of the operating stick.
+                                                </p>
+                                                <p>
+                                                    Firstly, we have to choose a lamp, this can be made through the two lamp buttons which are demonstrated in the top of Figure. Here by choosing one lamp, the particle effects will show up
+                                                    , and the disk lighting will show the direction of the lamp. By adjusting the lamp rotaion, if the it is aimed at the chest, where there is for loading the sounder of the robot, then the
+                                                    lamp will stop, and the part can be installed into the robot successfully.
+
+                                                </p>
+                                                <div class="about">
+                                                    <img style="text-align: center ;height:auto; max-width: 80%;" src="img/gamedesign/selectlamp.gif">
+                                                    <br><br> <p style="text-align:center;font-size:20px">
+                                                        Figure 2: the demonstration of selecting lamps
+                                                    </p>
+                                                </div>
+                                                <p>
+                                                    As demonstrated in Figure 2, this is the final outcome of selecting. <cs> LampClick.cs</cs> controls the click event.I used IPointer Handler to implement the event myself because I want to make the button selected untile the player deselect it or finish one treatment.
+                                                </p>
+                                                <pre><annotation>    //function of buttons on UI which are connected to the <cs>SurgeryController.cs</cs></annotation>
+<function>  OnPointerClick(lamp button)</function>
+    {
+<annotation>    //each button refers to a lamp</annotation>
+        SurgeryController =&gt; <function>SelectLamp(referred lamp)</function>;
+    }
+
+<function>  OnPointerEnter(lamp button)</function>
+    {
+        if (SurgeryController.m_selected != referred lamp)
+<function>          OnHover();</function>
+    }
+
+<function>  OnPointerExit(lamp button)</function>
+    {
+        if (SurgeryController.m_selected != referred lamp)
+<function>          OnDeSelect();</function>
+     }
+</pre>
+                                                <p>
+                                                    The logic of selecting lamp is a basic mutex selection problem, and writing this logic is useful for many things. My logic is as follows in <cs> SurgeryController.cs</cs>:
+                                                </p>
+                                                <pre><function>  SelectLamp(lampbutton object)</function>
+    {
+<annotation>    //Firstly, check whether the parameter exists</annotation>
+        if(!lamp) return
+
+<annotation>    //Secondly, determine wthether an object has been selected</annotation>
+        if(m_selectd)
+        {
+<annotation>    //Cancels the selection of the current lampbutton</annotation>
+            m_selected.OnDeSelect();
+         }
+
+<annotation>    //Thirdly, check wthether the selected object euqals the lampbutton parameter </annotation>
+        if(m_selectd==lampbutton)
+        {                
+<annotation>    //If selected is the lampbutton, it is a cancel of the operation</annotation>
+            m_selected.OnDeSelect();
+            m_selected = null;
+<annotation>    //surgicallamp is the lamp referred by the lampbutton</annotation>
+            m_surgicallamp = null;
+
+            return;
+         }
+<annotation>    //If selected is not the lampbutton, it is a switch of the operation</annotation>
+        lampbutton=&gt;(lampclick.OnSelect())
+        m_selected=lampbutton;
+        m_surgicallamp=lampbutton=&gt;(lampclick.m_surgicallamp)
+
+     }  
+</pre>
+                                                <div class="about">
+                                                    <img style="text-align: center ;height:auto; max-width: 80%;" src="img/gamedesign/toggle.gif">
+                                                    <br><br> <p style="text-align:center;font-size:20px">
+                                                        Figure 3: the demonstration of selecting lamps
+                                                    </p>
+                                                </div>
+                                                <p>
+                                                    As demonstrated in Figure 3, this is the final outcome of clamping toggle within certain range and seperating X and Y axis.
+                                                    To make the handle toggle move within the direction bar, I use <cs> LampController.cs</cs> to clamp the amount of movement.
+                                                </p>
+                                                <p>
+                                                    I used IDragHandler to implement the function.
+                                                </p>
+                                            </coding>
+                                            <pre><function>   OnBeginDrag(PointerEventData eventData)</function>
+    {
+<annotation>        //Firstly, when the drag begins, record the oringinal offset between mouse and the toggle.</annotation>
+<annotation>        //It is very important that we need to convert the position of the mouse between world and screen.</annotation>
+<annotation>        //eep z axis the same.</annotation>
+        z = Camera.WorldToScreenPoint(transform.position).z;
+        orinMousPos = new Vector3(mousePos.x, mousePos.y, z);
+        offset = transform.position - Camera.ScreenToWorldPoint(orinMousPos);
+    }
+
+<function>   OnDrag(PointerEventData eventData)</function>
+    {
+<annotation>        //Before dragging, the first step is to decide the direction</annotation>
+<annotation>        //Record the first movement of mouse and get a normalized vector thereby the direction</annotation>
+            ...
+            dragMousPos = new Vector3(mousePos.x, mousePos.y, z);
+            if (dragMousPos != orinMousPos)
+            {
+                Vector2 dir = (dragMousPos - orinMousPos).normalized;
+                if (Mathf.Abs(dir.x) &lt; Mathf.Abs(dir.y))
+                    dragDir = vertical;
+            }
+            ...
+<annotation>        //Then, we only need to add the current movement with offset in order to move the toggle</annotation>
+            ...
+<annotation>        //Take vertical direction as an example</annotation>
+            dragDir-&gt;vertical
+            dragMousPos = new Vector3(x, Input.mousePosition.y, z);
+            dragMousPos=uiCamera.ScreenToWorldPoint(dragMousPos) + offset;
+            ...
+<annotation>        //Finally, we can use the movement to control the lamps' rotation</annotation>
+            SurgeryController.<function>DriveSurgicalLamp(0,y offset of Recttransform)</function>;
+    }
+</pre>
+                                            <p>
+                                                Come back to <cs>SurgeryController.cs</cs>
+                                            </p>
+                                            <pre><function>DriveSurgicalLamp(x, y)</function>
+{
+<annotation>        //driveAmount is used as EulerAngles</annotation>
+    driveAmount=new Vector3(-y,0,x);
+}
+<function>Update()</function>
+{
+    m_surgeryLamp.transform.Rotate(driveAmount*rotSpeed);
+}
+</pre>
+                                            <br>
+
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- /code-->
+                            </div>
+                            <!-- /accordion-inner -->
+                        </div>
+                        <!-- /collapse -->
+                    </div>
+                    <br>
+
+                    <!-- More Interactions-->
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="GameBlog.html#collapse19" aria-expanded="false">
+                                <date>Apr 12, 2022</date>
+                                <plus> + </plus> More Interactions
+                            </a>
+                        </div>
+                        <div id="collapse19" class="accordion-body collapse" aria-expanded="false">
+                            <div class="accordion-inner">
+                                <br>
+                                <p>
+                                    In order to enhance the fun and interactivity of the game, I added some scene interactions in the subsequent production, such as benches that can be kicked away, cabinets that can be opened, and glass doors that can be broken. Many of these things do not affect the progress of the game, but they add to the atmosphere of the game, such as kicked over benches and disorderly visits, glass shards scattered on the ground and so on, which can heighten the sense of the hospital's waste.
+                                </p>
+                                <p>
+                                    To implement these mechanics,I added Rigidbody component to the chairs and it can be moved;About the cabinet,
+                                    I didnt normally make an animation for opening the door. I rather used
+                                    <a href="https://assetstore.unity.com/packages/tools/animation/dotween-hotween-v2-27676">DOTween</a>
+                                    to implemented this by transform.DORotateY();About the split of the glasses, I used the
+                                    <a href="https://assetstore.unity.com/packages/tools/physics/shatter-toolkit-1017">
+                                        Shatter Toolkit
+                                    </a>. And I add some specific sentences to change the material.
+
+                                </p>
+                                <img style="text-align: center ;height:auto; max-width: 80%;" src="img/gamedesign/kickoffchairs.gif">
+                                <br><br> <p style="text-align:center;font-size:20px">
+                                    Figure 1: kick off the chairs
+                                </p>
+                                <br>
+                                <img style="text-align: center ;height:auto; max-width: 80%;" src="img/gamedesign/opencabinet.gif">
+                                <br><br> <p style="text-align:center;font-size:20px">
+                                    Figure 2: open the cabinet
+                                </p>
+                                <br>
+                                <img style="text-align: center ;height:auto; max-width: 80%;" src="img/gamedesign/crashdoor.gif">
+                                <br><br> <p style="text-align:center;font-size:20px">
+                                    Figure 3: smash the glass door
+                                </p>
+                                <br>
+                            </div>
+                            <!-- /accordion-inner -->
+                        </div>
+                        <!-- /collapse -->
+                    </div>
+                    <br>
+
+                    <!-- Keypad -->
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="GameBlog.html#collapse20" aria-expanded="false">
+                                <date>Apr 17, 2022</date>
+                                <plus> + </plus> Keypad
+                            </a>
+                        </div>
+                        <div id="collapse20" class="accordion-body collapse" aria-expanded="false">
+                            <div class="accordion-inner">
+                                <br>
+                                <p>
+                                    The mechanism of opening the cabinet with the password is actually from <i>Resident Evil 2</i>,
+                                    where you open the cabinet to get energy, but the key on the keyboard for entering the password is missing,
+                                    so the key parts can be found somewhere else. After the button is installed,
+                                    the player can input the corresponding password to get the energy clearance.
+                                </p>
+                                <p>
+                                    Zhenyu was responsible for the development of this part, and I mainly assisted him to integrate it into my code and the code developed.
+                                </p>
+                                <img style="text-align: center ;height:auto; max-width: 80%;" src="img/gamedesign/cabinets.png">
+                                <br><br> <p style="text-align:center;font-size:20px">
+                                    Figure 1: the cabinets and the password machine
+                                </p>
+                                <div class="imgBox" style="overflow:hidden">
+                                    <div style="float:left;text-align:center">
+                                        <img style="height:auto; max-width: 80%;" src="img/gamedesign/keypad.png">
+                                        <p style="font-size:20px;text-align:center">
+                                            <br>
+                                            Figure 2: the keypad for password
+                                        </p>
+                                    </div>
+                                    <div style="float:left;text-align:center">
+                                        <img style="height:auto; max-width: 80%;" src="img/gamedesign/keypart.png">
+                                        <p style="font-size:20px;text-align:center">
+                                            <br>
+                                            Figure 3: the key part hidden in the cabinet
+                                        </p>
+                                    </div>
+                                </div>
+
+
+                                <br><br>
+
+                                <br>
+                            </div>
+                            <!-- /accordion-inner -->
+                        </div>
+                        <!-- /collapse -->
+                    </div>
+                    <br>
+
+                    <!-- Dialogue System with Audio -->
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="GameBlog.html#collapse21" aria-expanded="false">
+                                <date>Apr 23, 2022</date>
+                                <plus> + </plus> Dialogue System with Audio
+                            </a>
+                        </div>
+                        <div id="collapse21" class="accordion-body collapse" aria-expanded="false" style="height: 0px;">
+                            <div class="accordion-inner">
+                                <br>
+                                <p>
+                                    We embodied Iron's voice, which, in order to avoid gender bias, is not directly gender-specific.
+                                    Because of our excellent voice actors, Xichu Shi and Yinyun Lin, the character of Iron is brought to life.
+                                </p>
+                                <div class="imgBox" style="overflow:hidden">
+                                    <div style="float:left;text-align:center">
+                                        <img style="height:auto; max-width: 80%;" src="img/gamedesign/dialogue.png">
+                                        <p style="font-size:20px;text-align:center">
+                                            <br>
+                                            Figure 1: talk with nurse
+                                        </p>
+                                    </div>
+                                    <div style="float:left;text-align:center">
+                                        <img style="height:auto; max-width: 80%;" src="img/gamedesign/soliloquy.png">
+                                        <p style="font-size:20px;text-align:center">
+                                            <br>
+                                            Figure 2: talk to self
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <p>
+                                    Dialogue is divided into monologues and dubbing.
+                                    Identification is an important cornerstone for understanding game enjoyment
+                                    <i>
+                                        <a href="https://link.springer.com/content/pdf/10.1007/978-3-540-74873-1_6.pdf3">(Hefner, Klimmt &amp; Vorderer, 2007)</a>
+                                    </i>.
+                                    Soliloquy is very useful in enhancing the identity of the character. From the perspective of the player, I have clearly felt the importance of dubbing to the game experience in the later stage.
+                                </p>
+                                <p>
+                                    Zhenyu Zhou was responsible for the implementation of the dialogue system in the first level.
+                                    The package of a dialogue system was quoted, which was very convenient to use. After configuration, you only need to use Ink to write the corresponding story.
+                                </p>
+                                <img style="text-align: center ;height:auto; max-width: 80%;" src="img/gamedesign/ink.png">
+                                <br><br> <p style="text-align:center;font-size:20px">
+                                    Figure 3: a dialogue in the ink file
+                                </p>
+                                <p>
+                                    The suffixes #speaker:iron and # Audion :001 in Ink as shown in the Figure 3 are the implementation interfaces for some functions.
+                                    Based on this, I made the dynamic avatar of the conversation and called the audio.
+                                </p>
+                                <br>
+                            </div>
+                            <!-- /accordion-inner -->
+                        </div>
+                        <!-- /collapse -->
+                    </div>
+                    <br>
+                    <!-- Particle System -->
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion2" href="GameBlog.html#collapse22" aria-expanded="false">
+                                <date>Apr 28, 2022</date>
+                                <plus> + </plus> Particle System
+                            </a>
+                        </div>
+                        <div id="collapse22" class="accordion-body collapse" aria-expanded="false">
+                            <div class="accordion-inner">
+                                <br>
+                                <p>
+                                    For a SCI - Fi scene, particle effects are certainly essential. In order to show the energy, I made a lot of light surround effects. For the operating table laser, I also made a laser-like effect like the one shown here.
+                                </p>
+                                <div class="imgBox" style="overflow: hidden; padding: 0; margin: 0;">
+                                    <div style="float: left; text-align: center;solid;width:33%;">
+                                        <img style="height:auto; max-width: 80%;" src="img/gamedesign/diskLight.gif">
+                                        <p style="font-size:20px;text-align:center">
+                                            <br>
+                                            Figure 1: particles on the lamp
+                                        </p>
+                                    </div>
+                                    <div style="float: left; text-align: center;  width: 33%; ">
+                                        <img style="height:auto; max-width: 80%;" src="img/gamedesign/particle1.gif">
+                                        <p style="font-size:20px;text-align:center">
+                                            <br>
+                                            Figure 2: particles around the sounder
+                                        </p>
+                                    </div>
+                                    <div style="float: left; text-align: center;  width: 33%; ">
+                                        <img style="height:auto; max-width: 80%;" src="img/gamedesign/particle2.gif">
+                                        <p style="font-size:20px;text-align:center">
+                                            <br>
+                                            Figure 3:  particles around the core
+                                        </p>
+                                    </div>
+                                </div>
+                                <br>
+                            </div>
+                            <!-- /accordion-inner -->
+                        </div>
+                        <!-- /collapse -->
+                    </div>
+                    <br>
+                    <!-- Postprocess -->
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="GameBlog.html#collapse23" aria-expanded="false">
+                                <date>May 02, 2022</date>
+                                <plus> + </plus> Postprocess
+                            </a>
+                        </div>
+                        <div id="collapse23" class="accordion-body collapse" aria-expanded="false" style="">
+                            <div class="accordion-inner">
+                                <br>
+                                <p>
+                                    Games today are almost inseparable from post-processing graphics.
+                                    The graphics can be greatly improved with Unity's built-in Postprocess.
+                                    As shown in the picture, the texture of the screen
+                                    is very different before and after the post-processing effect is added.
+                                </p>
+                                <img style="text-align: center ;height:100%; max-width: 90%;" src="img/gamedesign/postprocess.png">
+                                <br><br> <p style="text-align:center;font-size:20px">
+                                    Figure 1: postprocess on (top) and postprocess off (bottom)
+                                </p>
+                                <p>
+                                    Some scene optimizations were made,
+                                    such as adjusting Threshold Intensity in Bloom of Volume and Scatter,
+                                    adding Tonemapping, setting mode to neutral, and adding Vignette to soften the image.
+                                    Finally, the color of the scene was corrected.
+                                    Too many original lights led to some exposure, and then shadow was added to make the picture softer.
+                                </p>
+
+                                <p>
+                                    There is a big difference between how the scene looks in UE when it first loads and how it looks in UE even with postprocess.
+                                    However, in order to fit the style of the scene, I optimized the screen performance by adjusting the volume component.
+                                    Figure 2 shows the effect of simply opening postprocess. The exposure is too strong and the scene is too bright,
+                                    which does not meet the setting of our abandoned hospital. As shown in Figure 3,
+                                    the effect of Shadows Midtone Highlights was turned on, and the whole picture was darkened.
+                                    Finally, through Color Adjustment, the exposure was adjusted to the most appropriate value,
+                                    and the final picture performance was obtained.
+                                </p>
+                                <div class="imgBox" style="overflow: hidden; padding: 0; margin: 0;">
+                                    <div style="float: left; text-align: center;solid;width:33%;">
+                                        <img style="height:auto; max-width: 80%;" src="img/gamedesign/post1.png">
+                                        <p style="font-size:20px;text-align:center">
+                                            <br>
+                                            Figure 1: with basic postprocess on
+                                        </p>
+                                    </div>
+                                    <div style="float: left; text-align: center;  width: 33%; ">
+                                        <img style="height:auto; max-width: 80%;" src="img/gamedesign/post2.png">
+                                        <p style="font-size:20px;text-align:center">
+                                            <br>
+                                            Figure 2: add Shadows Midtone Highlights
+                                        </p>
+                                    </div>
+                                    <div style="float: left; text-align: center;  width: 33%; ">
+                                        <img style="height:auto; max-width: 80%;" src="img/gamedesign/post3.png">
+                                        <p style="font-size:20px;text-align:center">
+                                            <br>
+                                            Figure 3:  add Color Adjustment
+                                        </p>
+                                        <br>
+                                    </div>
+                                    <!-- /accordion-inner -->
+                                </div>
+
+                                <p>
+                                    In order to get proper effect, lighting is also very important. Spot light with matching color is added to each solid place of lighting.
+                                    For example, I added many spot lights in the cabinet, orange lights in the warm lamp on the floor,
+                                    and corresponding lights in the ceiling. In addition, Unity does not have its own mirror reflection.
+                                    Usually, we can obtain a simple mirror effect by baking reflection probe,
+                                    but it is still a static mirror reflection and cannot achieve the effect of UE.
+                                    I adjusted the reflective property of the floor to weaken the effect of mirror reflection
+                                </p>
+                                <div class="imgBox" style="overflow: hidden; padding: 0; margin: 0;">
+                                    <div style="float: left; text-align: center;solid;width:33%;">
+                                        <img style="height:auto; max-width: 80%;" src="img/gamedesign/light1.png">
+                                        <p style="font-size:20px;text-align:center">
+                                            <br>
+                                            Figure 4: light setting of the ward
+                                        </p>
+                                    </div>
+                                    <div style="float: left; text-align: center;  width: 33%; ">
+                                        <img style="height:auto; max-width: 80%;" src="img/gamedesign/light2.png">
+                                        <p style="font-size:20px;text-align:center">
+                                            <br>
+                                            Figure 5: light setting of the cabinets
+                                        </p>
+                                    </div>
+                                    <div style="float: left; text-align: center;  width: 33%; ">
+                                        <img style="height:auto; max-width: 80%;" src="img/gamedesign/light3.png">
+                                        <p style="font-size:20px;text-align:center">
+                                            <br>
+                                            Figure 6:  light setting of the surgical room
+                                        </p>
+                                        <br>
+                                    </div>
+                                </div>
+                                <p>
+                                    Also, what I like most is our UI interface. Figure 7 shows the backpack. We designed this effect by ourselves.
+                                    I realized such a smooth opening and closing effect by setting the animation and using code assistance.
+                                    I did a simple calculation on the rotation to put everything in place.
+                                    Figure 8 shows the effect of the map, mainly a shader with a dissolve edge,
+                                    which is implemented using Unity's Fresnel Effect.
+                                    The dissolve value can be adjusted according to the time in the code.
+                                </p>
+                                <img style="height:auto; max-width: 80%;" src="img/gamedesign/bag.gif">
+                                <p style="font-size:20px;text-align:center">
+                                    <br>
+                                    Figure 7:  the open and close of bag
+                                </p>
+                                <br>
+                                <img style="height:auto; max-width: 80%;" src="img/gamedesign/map.gif">
+                                <p style="font-size:20px;text-align:center">
+                                    <br>
+                                    Figure 8:  the dissolve effect of the map
+                                </p>
+                                <!-- /accordion-inner -->
+                            </div>
+                            <!-- /collapse -->
+                        </div>
+                    </div>
+                    <br>
+
+                    <!-- Playtest and Debug -->
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="GameBlog.html#collapse24" aria-expanded="false">
+                                <date>May 10, 2022</date>
+                                <plus> + </plus> Playtest and Debug
+                            </a>
+                        </div>
+                        <div id="collapse24" class="accordion-body collapse" aria-expanded="false" style="">
+                            <div class="accordion-inner">
+                                <br>
+                                <p>
+                                    Later, we all played through the game and found some bugs to correct. For example, in the story flow, if the player doesn't move forward before talking to Nurse Robot, it will cause the story to go wrong. This is due to my plottrigger setting, and I will limit it later.
+                                </p>
+                            </div>
+                            <!-- /accordion-inner -->
+                        </div>
+                        <!-- /collapse -->
+                    </div>
+                    <br>
+
+                    <!-- Reflections on my Research Question -->
+                    <div class="accordion-group">
+                        <div class="accordion-heading">
+                            <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="GameBlog.html#collapse25" aria-expanded="false">
+                                <date>May 15, 2022</date>
+                                <plus> + </plus> Reflections
+                            </a>
+                        </div>
+                        <div id="collapse25" class="accordion-body collapse" aria-expanded="false" style="">
+                            <div class="accordion-inner">
+                                <br>
+                                <p>
+                                    Through the combination of theory and practice to develop such a game, IN this project, I want to create a real game experience, and explore the meaning of character Progression and its realization. I gained a lot in this project. here are still many parts which can be optimized and improved. With the limitation of time,  some designed mechanics are not conducted.
+                                </p>
+                            </div>
+                            <!-- /accordion-inner -->
+                        </div>
+                        <!-- /collapse -->
+                    </div>
+                    <br>
+                </div>
+                <!-- Accordion -->
+            </div>
+            <!-- /col-lg-6 -->
+
+            <div class="col-lg-3"></div>
+        </div>
+        <!-- /row -->
+    </div>
+    <!-- /container -->
+    <!--
+    <div id="testimonial">
+        <div class="container">
+            <div class="bs-example">
+                <div id="carousel-example-generic" class="carousel slide bs-docs-carousel-example">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+                        <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <h1>Work with Alex was a pleasure. He understood exactly what I wanted and created an awesome site for my company.</h1>
+                            <br>
+                            <h2>Brad Cooper</h2>
+                        </div>
+                        <div class="item">
+                            <h1>I'm really happy with the results. Get 100% satisfaction is difficult but Alex got it without problems.</h1>
+                            <br>
+                            <h2>Joan Mathews</h2>
+                        </div>
+                        <div class="item">
+                            <h1>Search no more. Alex is the guy that you need for your next project. Don't waste your time. He's the chosen one.</h1>
+                            <br>
+                            <h2>Trevor Bishop</h2>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="contact" name="contact"></section>
+
+    <div id="footerwrap">
+      <div class="container">
+        <div class="col-lg-5">
+          <h3>Address</h3>
+          <p>
+            Av. Greenville 987,<br/> New York,<br/> 90873
+            <br/> United States
+          </p>
+        </div>
+
+        <div class="col-lg-7">
+          <h3>Drop Me A Line</h3>
+          <br>
+
+          <form class="contact-form php-mail-form" role="form" action="contactform/contactform.php" method="POST">
+
+            <div class="form-group">
+              <label for="contact-name">Your Name</label>
+              <input type="name" name="name" class="form-control" id="contact-name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" >
+              <div class="validate"></div>
+            </div>
+            <div class="form-group">
+              <label for="contact-email">Your Email</label>
+              <input type="email" name="email" class="form-control" id="contact-email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email">
+              <div class="validate"></div>
+            </div>
+            <div class="form-group">
+              <label for="contact-subject">Subject</label>
+              <input type="text" name="subject" class="form-control" id="contact-subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject">
+              <div class="validate"></div>
+            </div>
+
+            <div class="form-group">
+              <label for="contact-message">Your Message</label>
+              <textarea class="form-control" name="message" id="contact-message" placeholder="Your Message" rows="5" data-rule="required" data-msg="Please write something for us"></textarea>
+              <div class="validate"></div>
+            </div>
+
+            <div class="loading"></div>
+            <div class="error-message"></div>
+            <div class="sent-message">Your message has been sent. Thank you!</div>
+
+            <div class="form-send">
+              <button type="submit" class="btn btn-large">Send Message</button>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div id="copyrights">
+      <div class="container">
+        <p>Copyright &copy; 2019.Company name All rights reserved.<a target="_blank" href="http://sc.chinaz.com/moban/">&#x7F51;&#x9875;&#x6A21;&#x677F;</a></p>
+        <div class="credits">
+
+        </div>
+      </div>
+    </div>
+    --  >
+
+    <!-- JavaScript Libraries -->
+    <script src="lib/jquery/jquery.min.js"></script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="lib/php-mail-form/validate.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/chart/chart.js"></script>
+    <script src="lib/classie/classie.js"></script>
+    <script src="lib/gnmenu/gnmenu.js"></script>
+
+    <!-- Template Main Javascript File -->
+    <script src="js/main.js"></script>
+
+</body>
+</html>
