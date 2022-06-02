@@ -144,16 +144,7 @@ hr {
     margin-left: 0%;
     height: auto;
 }
-.row{
-    margin:2% 15%;
 
-    width:70%;
-    text-align:center
-}
-.row p{
-    text-align:justify;
-    text-justify:inter-ideograph;
-}
 #foliowrap {
     background: url(../img/foliowrap.jpg) no-repeat center top;
     margin-top: 30px;
@@ -320,7 +311,10 @@ hr {
 .label {
   padding-bottom: 15px
 }
-
+.paragraph {
+    text-align: justify;
+    text-justify: inter-ideograph;
+}
 .centered {
   text-align: center
 }
